@@ -7,7 +7,7 @@ const Book = require('../models/book')
 router.get('/', async (req, res) => {
     let searchOptions = {}
     if (req.query.name != null && req.query.name !== '') {
-        searchOptions.name = new RegExp(req.query.name, 'i')
+        query = query.regex('title', new RegExp(req.query.title, 'i'))
     }
     try {
         const authors = await Author.find(searchOptions)
@@ -41,6 +41,7 @@ router.post('/', async (req, res) => {
     }
 })
 
+// 
 router.get('/:id', async (req, res) => {
     try {
         const author = await Author.findById(req.params.id)
@@ -54,6 +55,7 @@ router.get('/:id', async (req, res) => {
     }
 })
 
+// 
 router.get('/:id/edit', async (req, res) => {
     try {
         const author = await Author.findById(req.params.id)
@@ -63,6 +65,7 @@ router.get('/:id/edit', async (req, res) => {
     }
 })
 
+// update author route
 router.put('/:id', async (req, res) => {
     let author
     try {
@@ -82,6 +85,7 @@ router.put('/:id', async (req, res) => {
     }
 })
 
+// delete author route
 router.delete('/:id', async (req, res) => {
     let author
     try {

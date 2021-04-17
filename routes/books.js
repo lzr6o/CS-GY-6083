@@ -42,7 +42,6 @@ router.post('/', async (req, res) => {
         description: req.body.description
     })
     saveCover(book, req.body.cover)
-
     try {
         const newBook = await book.save()
         res.redirect(`books/${newBook.id}`)
