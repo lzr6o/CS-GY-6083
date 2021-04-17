@@ -1,20 +1,15 @@
 <h2>Search Customers</h2>
 <form action="/customers" method="GET">
     <div>
-        <label>First Name</label>
-        <input type="text" name="firstName" value="<%= searchOptions.firstName %>">
-    </div>
-    <div>
-        <label>Last Name</label>
-        <input type="text" name="lastName" value="<%= searchOptions.lastName %>">
+        <label>Name</label>
+        <input type="text" name="name" value="<%= searchOptions.name %>">
     </div>
     <button type="submit">Search</button>
 </form>
 <br>
 <% customers.forEach(customer=> { %>
     <div>
-        <%=customer.firstName%>
-            <%=customer.lastName%>
+        <%= customer.fullName %>
     </div>
     <div>
         <a href="/customers/<%= customer.id %>">

@@ -2,15 +2,16 @@ const express = require('express')
 const router = express.Router()
 const Author = require('../models/author')
 const Book = require('../models/book')
+const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif']
 
 // all authors route
 router.get('/', async (req, res) => {
-    let searchOptions = {}
+    let query = Author.find()
     if (req.query.name != null && req.query.name !== '') {
-        query = query.regex('title', new RegExp(req.query.title, 'i'))
+        query = query.regex('fullName', new RegExp(req.query.name, 'i'))
     }
     try {
-        const authors = await Author.find(searchOptions)
+        const authors = await query.exec()
         res.render('authors/index', {
             authors: authors,
             searchOptions: req.query
@@ -28,20 +29,31 @@ router.get('/new', (req, res) => {
 // create author route
 router.post('/', async (req, res) => {
     const author = new Author({
-        name: req.body.name
+        fullName: req.body.firstName + ' ' + req.body.lastName,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        gender: req.body.gender,
+        email: req.body.email,
+        phone: req.body.phone,
+        street: req.body.street,
+        city: req.body.city,
+        zipcode: req.body.zipcode,
+        state: req.body.state,
+        country: req.body.country
     })
+    saveCover(author, req.body.cover)
     try {
         const newAuthor = await author.save()
         res.redirect(`authors/${newAuthor.id}`)
     } catch {
         res.render('authors/new', {
             author: author,
-            errorMessage: 'Error creating Author'
+            errorMessage: 'Error Creating Author'
         })
     }
 })
 
-// 
+// show author route
 router.get('/:id', async (req, res) => {
     try {
         const author = await Author.findById(req.params.id)
@@ -55,7 +67,7 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-// 
+// edit author route
 router.get('/:id/edit', async (req, res) => {
     try {
         const author = await Author.findById(req.params.id)
@@ -70,7 +82,20 @@ router.put('/:id', async (req, res) => {
     let author
     try {
         author = await Author.findById(req.params.id)
-        author.name = req.body.name
+        author.fullName = req.body.firstName + ' ' + req.body.lastName,
+        author.firstName = req.body.firstName
+        author.lastName = req.body.lastName
+        author.gender = req.body.gender
+        author.email = req.body.email
+        author.phone = req.body.phone
+        author.street = req.body.street
+        author.city = req.body.city
+        author.zipcode = req.body.zipcode
+        author.state = req.body.state
+        author.country = req.body.country
+        if (req.body.cover != null && req.body.cover !== '') {
+            saveCover(author, req.body.cover)
+        }
         await author.save()
         res.redirect(`/authors/${author.id}`)
     } catch {
@@ -100,5 +125,14 @@ router.delete('/:id', async (req, res) => {
         }
     }
 })
+
+function saveCover(author, coverEncoded) {
+    if (coverEncoded == null) return
+    const cover = JSON.parse(coverEncoded)
+    if (cover != null && imageMimeTypes.includes(cover.type)) {
+        author.coverImage = new Buffer.from(cover.data, 'base64')
+        author.coverImageType = cover.type
+    }
+}
 
 module.exports = router

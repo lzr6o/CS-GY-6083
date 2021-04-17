@@ -1,6 +1,31 @@
 <h2>
-    <%= author.name %>
+    <%= author.fullName %>
 </h2>
+<img width="150" height="150" src="<%= author.coverImagePath %>">
+<div>
+    Gender: <%= author.gender %>
+</div>
+<div>
+    Email: <%= author.email %>
+</div>
+<div>
+    Phone: <%= author.phone %>
+</div>
+<div>
+    Street: <%= author.street %>
+</div>
+<div>
+    City: <%= author.city %>
+</div>
+<div>
+    Zipcode: <%= author.zipcode %>
+</div>
+<div>
+    State: <%= author.state %>
+</div>
+<div>
+    Country: <%= author.country %>
+</div>
 <a href="/authors/<%= author.id %>/edit">Edit</a>
 <%- include('../partials/deleteForm', { url: `/authors/${author.id}` }) %>
     <% if (booksByAuthor.length> 0) { %>

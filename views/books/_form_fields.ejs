@@ -7,9 +7,9 @@
     <select name="author">
         <% authors.forEach(author=> { %>
             <% if (author.id===book.author) { %>
-                <option selected label="<%= author.name %>" value="<%= author.id %>">
+                <option selected label="<%= author.fullName %>" value="<%= author.id %>">
                     <% } else { %>
-                <option label="<%= author.name %>" value="<%= author.id %>">
+                <option label="<%= author.fullName %>%>" value="<%= author.id %>">
                     <% } %>
                         <% }) %>
     </select>
@@ -24,10 +24,10 @@
     <input type="number" name="pageCount" min="1" value="<%= book.pageCount %>">
 </div>
 <div>
-    <label>Cover</label>
-    <input type="file" name="cover" class="filepond">
+    <label>Description</label>
+    <textarea name="description"><%= book.description %></textarea>>
 </div>
 <div>
-    <label>Description</label>
-    <textarea type="description"><%= book.description %></textarea>>
+    <label>Cover</label>
+    <input type="file" name="cover" class="filepond">
 </div>

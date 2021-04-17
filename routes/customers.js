@@ -6,11 +6,8 @@ const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif']
 // all customers route
 router.get('/', async (req, res) => {
     let query = Customer.find()
-    if (req.query.lastName != null && req.query.lastName !== '') {
-        query = query.regex('lastName', new RegExp(req.query.lastName, 'i'))
-    }
-    if (req.query.firstName != null && req.query.firstName !== '') {
-        query = query.regex('firstName', new RegExp(req.query.firstName, 'i'))
+    if (req.query.name != null && req.query.name !== '') {
+        query = query.regex('fullName', new RegExp(req.query.name, 'i'))
     }
     try {
         const customers = await query.exec()
@@ -33,6 +30,7 @@ router.post('/', async (req, res) => {
     const customer = new Customer({
         username: req.body.username,
         password: req.body.password,
+        fullName: req.body.firstName + ' ' + req.body.lastName,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         gender: req.body.gender,
@@ -85,6 +83,7 @@ router.put('/:id', async (req, res) => {
         customer = await Customer.findById(req.params.id)
         customer.username = req.body.username
         customer.password = req.body.password
+        customer.fullName = req.body.firstName + ' ' + req.body.lastName
         customer.firstName = req.body.firstName
         customer.lastName = req.body.lastName
         customer.gender = req.body.gender
@@ -125,7 +124,7 @@ router.delete('/:id', async (req, res) => {
         if (customer == null) {
             res.redirect('/')
         } else {
-            res.redirect(res.redirect(`/customers/${customer.id}`))
+            res.redirect(`/customers/${customer.id}`)
         }
     }
 })
