@@ -73,9 +73,8 @@ router.get('/:id/edit', async (req, res) => {
 })
 
 // update book route
-router.post('/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
     let book
-
     try {
         book = await Book.findById(req.params.id)
         book.title = req.body.title
@@ -87,17 +86,17 @@ router.post('/:id', async (req, res) => {
             saveCover(book, req.body.cover)
         }
         await book.save()
-        res.redirect(`books/${Book.id}`)
+        res.redirect(`/books/${book.id}`)
     } catch {
         if (book != null) {
             renderEditPage(res, book, true)
         } else {
-            redirect('/')
+            res.redirect('/')
         }
     }
 })
 
-// delete book page
+// delete book route
 router.delete('/:id', async (req, res) => {
     let book
     try {

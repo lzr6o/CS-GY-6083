@@ -1,0 +1,24 @@
+<div>
+    Payer: <%= payment.customer.fullName %>
+</div>
+<div>
+    Pay Date: <%= payment.payDate.toDateString() %>
+</div>
+<div>
+    Amount: <%= payment.amount %>
+</div>
+<div>
+    Method: <%= payment.method %>
+</div>
+<div>
+    Card Holder Name: <%= payment.cardHolderName %>
+</div>
+<div>
+    Card Number: <%= payment.cardNumber %>
+</div>
+<div>
+    Card Expiration Date: <%= payment.cardExpirationDate.toDateString() %>
+</div>
+<a href="/payments/<%= payment.id %>/edit">Edit</a>
+<%- include('../partials/deleteForm', { url: `/payments/${payment.id}` }) %>
+<a href="/customers/<%= payment.customer.id %>">View Customer</a>

@@ -100,7 +100,7 @@ router.put('/:id', async (req, res) => {
             saveCover(customer, req.body.cover)
         }
         await customer.save()
-        res.redirect(`customers/${Customer.id}`)
+        res.redirect(`customers/${customer.id}`)
     } catch {
         if (customer == null) {
             res.redirect('/')
