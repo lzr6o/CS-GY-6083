@@ -3,7 +3,19 @@
 </h2>
 <img width="100" height="150" src="<%= book.coverImagePath %>">
 <div>
+    Topic: <%= book.topic %>
+</div>
+<div>
     Author: <%= book.author.fullName %>
+</div>
+<div>
+    ISBN: <%= book.ISBN %>
+</div>
+<div>
+    Total Copies: <%= book.totalCopies %>
+</div>
+<div>
+    Copy ID: <%= book.copyID %>
 </div>
 <div>
     Publish Date: <%= book.publishDate.toDateString() %>

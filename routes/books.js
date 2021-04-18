@@ -10,6 +10,9 @@ router.get('/', async (req, res) => {
     if (req.query.title != null && req.query.title != '') {
         query = query.regex('title', new RegExp(req.query.title, 'i'))
     }
+    if (req.query.topic != null && req.query.topic != '') {
+        query = query.regex('topic', new RegExp(req.query.topic, 'i'))
+    }
     if (req.query.publishedBefore != null && req.query.publishedBefore != '') {
         query = query.lte('publishedDate', req.query.publishedBefore)
     }
@@ -36,7 +39,11 @@ router.get('/new', async (req, res) => {
 router.post('/', async (req, res) => {
     const book = new Book({
         title: req.body.title,
+        topic: req.body.topic,
         author: req.body.author,
+        ISBN: req.body.ISBN,
+        totalCopies: req.body.totalCopies,
+        copyID: req.body.copyID,
         publishDate: new Date(req.body.publishDate),
         pageCount: req.body.pageCount,
         description: req.body.description
@@ -78,7 +85,11 @@ router.put('/:id', async (req, res) => {
     try {
         book = await Book.findById(req.params.id)
         book.title = req.body.title
+        book.topic = req.body.topic
         book.author = req.body.author
+        book.ISBN = req.body.ISBN
+        book.totalCopies = req.body.totalCopies
+        book.copyID = req.body.copyID
         book.publishDate = new Date(req.body.publishDate)
         book.pageCount = req.body.pageCount
         book.description = req.body.description

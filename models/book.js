@@ -5,7 +5,23 @@ const bookSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    topic: {
+        type: String,
+        required: true
+    },
     description: {
+        type: String,
+        required: true
+    },
+    ISBN: {
+        type: Number,
+        required: true
+    },
+    totalCopies: {
+        type: Number,
+        required: true
+    },
+    copyID: {
         type: String,
         required: true
     },
