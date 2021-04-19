@@ -1,0 +1,43 @@
+<div>
+    <label>Customer</label>
+    <select name="customer">
+        <% customers.forEach(customer => { %>
+            <% if (customer.id===rental.customer) { %>
+                <option selected label="<%= customer.fullName %>" value="<%= customer.id %>">
+                    <% } else { %>
+                <option label="<%= customer.fullName %>%>" value="<%= customer.id %>">
+                    <% } %>
+                        <% }) %>
+    </select>
+</div>
+<div>
+    <label>Book</label>
+    <select name="book">
+        <% books.forEach(book => { %>
+            <% if (book.id===rental.book) { %>
+                <option selected label="<%= book.title %>" value="<%= book.id %>">
+                    <% } else { %>
+                <option label="<%= book.title %>%>" value="<%= book.id %>">
+                    <% } %>
+                        <% }) %>
+    </select>
+</div>
+<div>
+    <label>Borrow Date</label>
+    <input type="date" name="borrowDate" value="<%= rental.borrowDate == null ? '' :
+    rental.borrowDate.toISOString().split('T')[0] %>">
+</div>
+<div>
+    <label>Expected Return Date</label>
+    <input type="date" name="expectedReturnDate" value="<%= rental.expectedReturnDate == null ? '' :
+    rental.expectedReturnDate.toISOString().split('T')[0] %>">
+</div>
+<div>
+    <label>Actual Return Date</label>
+    <input type="date" name="actualReturnDate" value="<%= rental.actualReturnDate == null ? '' :
+    rental.actualReturnDate.toISOString().split('T')[0] %>">
+</div>
+<div>
+    <label>Rental Status</label>
+    <input type="text" name="rentalStatus" value="<%= rental.rentalStatus %>">
+</div>

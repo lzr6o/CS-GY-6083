@@ -25,6 +25,10 @@ const bookSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    copyStatus: {
+        type: String,
+        required: true
+    },
     publishDate: {
         type: Date,
         required: true

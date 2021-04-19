@@ -48,7 +48,6 @@ router.post('/', async (req, res) => {
         cardNumber: req.body.cardNumber,
         cardExpirationDate: new Date(req.body.cardExpirationDate)
     })
-    console.log(payment)
     try {
         const newPayment = await payment.save()
         res.redirect(`payments/${newPayment.id}`)
@@ -110,9 +109,9 @@ router.delete('/:id', async (req, res) => {
         await payment.remove()
         res.redirect('/payments')
     } catch {
-        if (book != null) {
+        if (payment != null) {
             res.render('payments/show', {
-                book: book,
+                payment: payment,
                 errorMessage: 'Could Not Remove Payment'
             })
         } else {

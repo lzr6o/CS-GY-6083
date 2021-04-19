@@ -13,6 +13,9 @@ router.get('/', async (req, res) => {
     if (req.query.topic != null && req.query.topic != '') {
         query = query.regex('topic', new RegExp(req.query.topic, 'i'))
     }
+    if (req.query.copyStatus != null && req.query.copyStatus != '') {
+        query = query.regex('copyStatus', new RegExp(req.query.copyStatus, 'i'))
+    }
     if (req.query.publishedBefore != null && req.query.publishedBefore != '') {
         query = query.lte('publishedDate', req.query.publishedBefore)
     }
@@ -44,6 +47,7 @@ router.post('/', async (req, res) => {
         ISBN: req.body.ISBN,
         totalCopies: req.body.totalCopies,
         copyID: req.body.copyID,
+        copyStatus: req.body.copyStatus,
         publishDate: new Date(req.body.publishDate),
         pageCount: req.body.pageCount,
         description: req.body.description
@@ -90,6 +94,7 @@ router.put('/:id', async (req, res) => {
         book.ISBN = req.body.ISBN
         book.totalCopies = req.body.totalCopies
         book.copyID = req.body.copyID
+        book.copyStatus = req.body.copyStatus
         book.publishDate = new Date(req.body.publishDate)
         book.pageCount = req.body.pageCount
         book.description = req.body.description

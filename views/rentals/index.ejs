@@ -1,0 +1,26 @@
+<h2>Search Rental</h2>
+<form action="/rentals" method="GET">
+    <div>
+        <label>Rental Status</label>
+        <input type="text" name="rentalStatus" value="<%= searchOptions.rentalStatus %>">
+    </div>
+    <div>
+        <label>Rent After</label>
+        <input type="date" name="rentalAfter" value="<%= searchOptions.rentalAfter %>">
+    </div>
+    <div>
+        <label>Rent Before</label>
+        <input type="date" name="rentalBefore" value="<%= searchOptions.rentalBefore %>">
+    </div>
+    <button type="submit">Search</button>
+</form>
+<br>
+<% rentals.forEach(rental => { %>
+    <div>
+        <%= rental.borrowDate.toDateString() %>
+        <%= rental.rentalStatus %>
+    </div>
+    <a href="/rentals/<%= rental.id %>">View</a>
+    <a href="/rentals/<%= rental.id %>/edit">Edit</a>
+    <%- include('../partials/deleteForm', { url: `/rentals/${rental.id}` }) %>
+        <% }) %>

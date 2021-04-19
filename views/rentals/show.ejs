@@ -1,0 +1,22 @@
+<div>
+    Borrower: <%= rental.customer.fullName %>
+</div>
+<div>
+    Book: <%= rental.book.title %>
+</div>
+<div>
+    Borrow Date: <%= rental.borrowDate.toDateString() %>
+</div>
+<div>
+    Expected Return Date: <%= rental.expectedReturnDate.toDateString() %>
+</div>
+<div>
+    Actual Return Date: <%= rental.actualReturnDate.toDateString() %>
+</div>
+<div>
+    Rental Status: <%= rental.rentalStatus %>
+</div>
+<a href="/rentals/<%= rental.id %>/edit">Edit</a>
+<%- include('../partials/deleteForm', { url: `/rentals/${rental.id}` }) %>
+<a href="/customers/<%= rental.customer.id %>">View Customer</a>
+<a href="/books/<%= rental.book.id %>">View Book</a>
