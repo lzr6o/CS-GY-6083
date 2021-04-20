@@ -5,10 +5,6 @@ const bookSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    topic: {
-        type: String,
-        required: true
-    },
     description: {
         type: String,
         required: true
@@ -54,6 +50,11 @@ const bookSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'Author'
+    },
+    topic: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Topic'
     }
 })
 

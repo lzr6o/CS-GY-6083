@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Book = require('../models/book')
+const Topic = require('../models/topic')
 const Author = require('../models/author')
 const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif']
 
@@ -9,9 +10,6 @@ router.get('/', async (req, res) => {
     let query = Book.find()
     if (req.query.title != null && req.query.title != '') {
         query = query.regex('title', new RegExp(req.query.title, 'i'))
-    }
-    if (req.query.topic != null && req.query.topic != '') {
-        query = query.regex('topic', new RegExp(req.query.topic, 'i'))
     }
     if (req.query.copyStatus != null && req.query.copyStatus != '') {
         query = query.regex('copyStatus', new RegExp(req.query.copyStatus, 'i'))
@@ -66,6 +64,7 @@ router.get('/:id', async (req, res) => {
     try {
         const book = await Book.findById(req.params.id)
             .populate('author')
+            .populate('topic')
             .exec()
         res.render('books/show', { book: book })
     } catch {
@@ -142,8 +141,10 @@ async function renderEditPage(res, book, hasError = false) {
 async function renderFormPage(res, book, form, hasError = false) {
     try {
         const authors = await Author.find({})
+        const topics = await Topic.find({})
         const params = {
             authors: authors,
+            topics: topics,
             book: book
         }
         if (hasError) {

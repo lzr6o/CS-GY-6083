@@ -4,7 +4,27 @@
 </div>
 <div>
     <label>Topic</label>
-    <input type="text" name="topic" value="<%= book.topic %>">
+    <select name="topic">
+        <% topics.forEach(topic => { %>
+            <% if (topic.id===book.topic) { %>
+                <option selected label="<%= topic.type %>" value="<%= topic.id %>">
+                    <% } else { %>
+                <option label="<%= topic.type %>%>" value="<%= topic.id %>">
+                    <% } %>
+                        <% }) %>
+    </select>
+</div>
+<div>
+    <label>Author</label>
+    <select name="author">
+        <% authors.forEach(author => { %>
+            <% if (author.id===book.author) { %>
+                <option selected label="<%= author.fullName %>" value="<%= author.id %>">
+                    <% } else { %>
+                <option label="<%= author.fullName %>%>" value="<%= author.id %>">
+                    <% } %>
+                        <% }) %>
+    </select>
 </div>
 <div>
     <label>ISBN</label>
@@ -21,18 +41,6 @@
 <div>
     <label>Copy Status</label>
     <input type="text" name="copyStatus" value="<%= book.copyStatus %>">
-</div>
-<div>
-    <label>Author</label>
-    <select name="author">
-        <% authors.forEach(author => { %>
-            <% if (author.id===book.author) { %>
-                <option selected label="<%= author.fullName %>" value="<%= author.id %>">
-                    <% } else { %>
-                <option label="<%= author.fullName %>%>" value="<%= author.id %>">
-                    <% } %>
-                        <% }) %>
-    </select>
 </div>
 <div>
     <label>Publish Date</label>
