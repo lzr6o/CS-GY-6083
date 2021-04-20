@@ -7,8 +7,8 @@ const Book = require('../models/book')
 // all rentals route
 router.get('/', async (req, res) => {
     let query = Rental.find()
-    if (req.query.rentalStatus != null && req.query.rentalStatus != '') {
-        query = query.regex('rentalStatus', new RegExp(req.query.rentalStatus, 'i'))
+    if (req.query.status != null && req.query.status != '') {
+        query = query.regex('status', new RegExp(req.query.status, 'i'))
     }
     if (req.query.rentAfter != null && req.query.rentBefore != '') {
         query = query.lte('borrowDate', req.query.rentBefore)
@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
         borrowDate: new Date(req.body.borrowDate),
         expectedReturnDate: new Date(req.body.expectedReturnDate),
         actualReturnDate: new Date(req.body.actualReturnDate),
-        rentalStatus: req.body.rentalStatus,
+        status: req.body.status,
         book: req.body.book,
         customer: req.body.customer
     })
@@ -81,7 +81,7 @@ router.put('/:id', async (req, res) => {
         rental.borrowDate = new Date(req.body.borrowDate)
         rental.expectedReturnDate = new Date(req.body.expectedReturnDate)
         rental.actualReturnDate = new Date(req.body.actualReturnDate)
-        rental.rentalStatus = req.body.rentalStatus
+        rental.status = req.body.status
         rental.book = req.body.book
         rental.customer = req.body.customer
         await rental.save()

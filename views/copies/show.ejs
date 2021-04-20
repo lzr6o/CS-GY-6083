@@ -1,0 +1,12 @@
+<div>
+    ID: <%= copy.id %>
+</div>
+<div>
+    Description: <%= copy.description %>
+</div>
+<div>
+    Status: <%= copy.status %>
+</div>
+<a href="/copies/<%= copy.id %>/edit">Edit</a>
+<%- include('../partials/deleteForm', { url: `/copies/${copy.id}` }) %>
+<a href="/books/<%= copy.book.id %>">View Book</a>

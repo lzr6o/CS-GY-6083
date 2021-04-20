@@ -13,7 +13,7 @@ const rentalSchema = new mongoose.Schema({
         type: Date,
         required: true
     },
-    rentalStatus: {
+    status: {
         type: String,
         required: true
     },

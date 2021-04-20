@@ -14,7 +14,7 @@
     Actual Return Date: <%= rental.actualReturnDate.toDateString() %>
 </div>
 <div>
-    Rental Status: <%= rental.rentalStatus %>
+    Status: <%= rental.status %>
 </div>
 <a href="/rentals/<%= rental.id %>/edit">Edit</a>
 <%- include('../partials/deleteForm', { url: `/rentals/${rental.id}` }) %>

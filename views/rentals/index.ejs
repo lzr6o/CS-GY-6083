@@ -1,8 +1,8 @@
 <h2>Search Rental</h2>
 <form action="/rentals" method="GET">
     <div>
-        <label>Rental Status</label>
-        <input type="text" name="rentalStatus" value="<%= searchOptions.rentalStatus %>">
+        <label>Status</label>
+        <input type="text" name="status" value="<%= searchOptions.status %>">
     </div>
     <div>
         <label>Rent After</label>
@@ -18,7 +18,7 @@
 <% rentals.forEach(rental => { %>
     <div>
         <%= rental.borrowDate.toDateString() %>
-        <%= rental.rentalStatus %>
+        <%= rental.status %>
     </div>
     <a href="/rentals/<%= rental.id %>">View</a>
     <a href="/rentals/<%= rental.id %>/edit">Edit</a>

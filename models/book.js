@@ -13,18 +13,6 @@ const bookSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    totalCopies: {
-        type: Number,
-        required: true
-    },
-    copyID: {
-        type: String,
-        required: true
-    },
-    copyStatus: {
-        type: String,
-        required: true
-    },
     publishDate: {
         type: Date,
         required: true
