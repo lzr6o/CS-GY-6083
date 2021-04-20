@@ -5,7 +5,7 @@
             <% if (customer.id===payment.customer) { %>
                 <option selected label="<%= customer.fullName %>" value="<%= customer.id %>">
                     <% } else { %>
-                <option label="<%= customer.fullName %>%>" value="<%= customer.id %>">
+                <option label="<%= customer.fullName %>" value="<%= customer.id %>">
                     <% } %>
                         <% }) %>
     </select>
@@ -17,7 +17,7 @@
             <% if (invoice.id===payment.invoice) { %>
                 <option selected label="<%= invoice.id %>" value="<%= invoice.id %>">
                     <% } else { %>
-                <option label="<%= invoice.id %>%>" value="<%= invoice.id %>">
+                <option label="<%= invoice.id %>" value="<%= invoice.id %>">
                     <% } %>
                         <% }) %>
     </select>

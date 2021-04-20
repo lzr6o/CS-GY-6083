@@ -9,7 +9,7 @@
             <% if (topic.id===book.topic) { %>
                 <option selected label="<%= topic.type %>" value="<%= topic.id %>">
                     <% } else { %>
-                <option label="<%= topic.type %>%>" value="<%= topic.id %>">
+                <option label="<%= topic.type %>" value="<%= topic.id %>">
                     <% } %>
                         <% }) %>
     </select>
@@ -21,7 +21,7 @@
             <% if (author.id===book.author) { %>
                 <option selected label="<%= author.fullName %>" value="<%= author.id %>">
                     <% } else { %>
-                <option label="<%= author.fullName %>%>" value="<%= author.id %>">
+                <option label="<%= author.fullName %>" value="<%= author.id %>">
                     <% } %>
                         <% }) %>
     </select>

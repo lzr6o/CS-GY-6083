@@ -1,0 +1,16 @@
+<h2>Search Room</h2>
+<form action="/rooms" method="GET">
+    <div>
+        <label>Number</label>
+        <input type="number" name="number" value="<%= searchOptions.number %>">
+    </div>
+    <button type="submit">Search</button>
+</form>
+<br>
+<div>
+    <% rooms.forEach(room => { %>
+        <a href="/rooms/<%= room.id %>">
+            <img height="100" width="150" src="<%= room.coverImagePath %>">
+        </a>
+        <% }) %>
+</div>

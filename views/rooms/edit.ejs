@@ -1,0 +1,6 @@
+<h2>Edit Room</h2>
+<form action="/rooms/<%= room.id %>?_method=PUT" method="POST">
+    <%- include('_form_fields') %>
+    <a href="/rooms">Cancel</a>
+    <button type="submit">Update</button>
+</form>

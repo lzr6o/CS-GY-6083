@@ -5,7 +5,7 @@
             <% if (customer.id===rental.customer) { %>
                 <option selected label="<%= customer.fullName %>" value="<%= customer.id %>">
                     <% } else { %>
-                <option label="<%= customer.fullName %>%>" value="<%= customer.id %>">
+                <option label="<%= customer.fullName %>" value="<%= customer.id %>">
                     <% } %>
                         <% }) %>
     </select>
@@ -15,9 +15,9 @@
     <select name="copy">
         <% copies.forEach(copy => { %>
             <% if (copy.id===rental.copy) { %>
-                <option selected label="<%= copy.description %>" value="<%= copy.id %>">
+                <option selected label="<%= copy.id %>" value="<%= copy.id %>">
                     <% } else { %>
-                <option label="<%= copy.description %>%>" value="<%= copy.id %>">
+                <option label="<%= copy.id %>" value="<%= copy.id %>">
                     <% } %>
                         <% }) %>
     </select>
