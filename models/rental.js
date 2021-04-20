@@ -17,6 +17,11 @@ const rentalSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    createdAt: {
+        type: Date,
+        required: true,
+        default: Date.now
+    },
     book: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,

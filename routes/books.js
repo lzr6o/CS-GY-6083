@@ -123,7 +123,7 @@ router.delete('/:id', async (req, res) => {
         if (book != null) {
             res.render('books/show', {
                 book: book,
-                errorMessage: 'Could not remove book'
+                errorMessage: 'Could Not Remove Book'
             })
         } else {
             res.redirect('/')

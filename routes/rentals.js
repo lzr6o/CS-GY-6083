@@ -3,7 +3,6 @@ const router = express.Router()
 const Rental = require('../models/rental')
 const Customer = require('../models/customer')
 const Book = require('../models/book')
-const customer = require('../models/customer')
 
 // all rentals route
 router.get('/', async (req, res) => {

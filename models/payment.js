@@ -19,6 +19,11 @@ const paymentSchema = new mongoose.Schema({
     cardNumber: {
         type: Number
     },
+    createdAt: {
+        type: Date,
+        required: true,
+        default: Date.now
+    },
     cardExpirationDate: {
         type: Date
     },

@@ -1,0 +1,34 @@
+<div>
+    <label>Name</label>
+    <input type="text" name="name" value="<%= event.name %>">
+</div>
+<div>
+    <label>Topic</label>
+    <select name="topic">
+        <% topics.forEach(topic => { %>
+            <% if (topic.id===event.topic) { %>
+                <option selected label="<%= topic.type %>" value="<%= topic.id %>">
+                    <% } else { %>
+                <option label="<%= topic.type %>%>" value="<%= topic.id %>">
+                    <% } %>
+                        <% }) %>
+    </select>
+</div>
+<div>
+    <label>Description</label>
+    <textarea name="description"><%= event.description %></textarea>>
+</div>
+<div>
+    <label>Start Time</label>
+    <input type="datetime-local" name="startTime" value="<%= event.startTime == null ? '' :
+    event.startTime.toISOString().split('T')[0] %>">
+</div>
+<div>
+    <label>End Time</label>
+    <input type="datetime-local" name="endTime" value="<%= event.endTime == null ? '' :
+    event.endTime.toISOString().split('T')[0] %>">
+</div>
+<div>
+    <label>Cover</label>
+    <input type="file" name="cover" class="filepond">
+</div>

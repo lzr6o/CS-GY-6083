@@ -1,0 +1,16 @@
+<h2>Search Topic</h2>
+<form action="/topics" method="GET">
+    <div>
+        <label>Type</label>
+        <input type="text" name="type" value="<%= searchOptions.type %>">
+    </div>
+    <button type="submit">Search</button>
+</form>
+<br>
+<div>
+    <% topics.forEach(topic => { %>
+        <a href="/topics/<%= topic.id %>">
+            <img height="150" width="150" src="<%= topic.coverImagePath %>">
+        </a>
+        <% }) %>
+</div>
