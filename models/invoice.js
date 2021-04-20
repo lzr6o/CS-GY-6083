@@ -1,6 +1,13 @@
 const mongoose = require('mongoose')
 
-const copySchema = new mongoose.Schema({
+const invoiceSchema = new mongoose.Schema({
+    dateGenerated: {
+        type: Date
+    },
+    amount: {
+        type: Number,
+        required: true
+    },
     status: {
         type: String,
         required: true
@@ -10,11 +17,11 @@ const copySchema = new mongoose.Schema({
         required: true,
         default: Date.now
     },
-    book: {
+    rental: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: 'Book'
+        ref: 'Rental'
     }
 })
 
-module.exports = mongoose.model('Copy', copySchema)
+module.exports = mongoose.model('Invoice', invoiceSchema)

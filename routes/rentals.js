@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Rental = require('../models/rental')
 const Customer = require('../models/customer')
-const Book = require('../models/book')
+const Copy = require('../models/copy')
 
 // all rentals route
 router.get('/', async (req, res) => {
@@ -39,7 +39,7 @@ router.post('/', async (req, res) => {
         expectedReturnDate: new Date(req.body.expectedReturnDate),
         actualReturnDate: new Date(req.body.actualReturnDate),
         status: req.body.status,
-        book: req.body.book,
+        copy: req.body.copy,
         customer: req.body.customer
     })
     try {
@@ -55,7 +55,7 @@ router.get('/:id', async (req, res) => {
     try {
         const rental = await Rental.findById(req.params.id)
             .populate('customer')
-            .populate('book')
+            .populate('copy')
             .exec()
         res.render('rentals/show', { rental : rental })
     } catch {
@@ -82,7 +82,7 @@ router.put('/:id', async (req, res) => {
         rental.expectedReturnDate = new Date(req.body.expectedReturnDate)
         rental.actualReturnDate = new Date(req.body.actualReturnDate)
         rental.status = req.body.status
-        rental.book = req.body.book
+        rental.copy = req.body.copy
         rental.customer = req.body.customer
         await rental.save()
         res.redirect(`/rentals/${rental.id}`)
@@ -125,10 +125,10 @@ async function renderEditPage(res, rental, hasError = false) {
 async function renderFormPage(res, rental, form, hasError = false) {
     try {
         const customers = await Customer.find({})
-        const books = await Book.find({})
+        const copies = await Copy.find({})
         const params = {
             customers: customers,
-            books: books,
+            copies: copies,
             rental: rental
         }
         if (hasError) {

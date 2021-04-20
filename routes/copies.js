@@ -44,7 +44,9 @@ router.post('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const copy = await Copy.findById(req.params.id)
-        res.render('copies/show', { copy : copy })
+            .populate('book')
+            .exec()
+            res.render('copies/show', { copy : copy })
     } catch {
         res.redirect('/')
     }

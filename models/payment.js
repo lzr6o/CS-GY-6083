@@ -31,6 +31,11 @@ const paymentSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'Customer'
+    },
+    invoice: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Invoice'
     }
 })
 

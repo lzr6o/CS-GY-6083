@@ -10,8 +10,7 @@ const rentalSchema = new mongoose.Schema({
         required: true
     },
     actualReturnDate: {
-        type: Date,
-        required: true
+        type: Date
     },
     status: {
         type: String,
@@ -22,10 +21,10 @@ const rentalSchema = new mongoose.Schema({
         required: true,
         default: Date.now
     },
-    book: {
+    copy: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: 'Book'
+        ref: 'Copy'
     },
     customer: {
         type: mongoose.Schema.Types.ObjectId,

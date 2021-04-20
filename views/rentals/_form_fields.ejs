@@ -11,13 +11,13 @@
     </select>
 </div>
 <div>
-    <label>Book</label>
-    <select name="book">
-        <% books.forEach(book => { %>
-            <% if (book.id===rental.book) { %>
-                <option selected label="<%= book.title %>" value="<%= book.id %>">
+    <label>Copy</label>
+    <select name="copy">
+        <% copies.forEach(copy => { %>
+            <% if (copy.id===rental.copy) { %>
+                <option selected label="<%= copy.description %>" value="<%= copy.id %>">
                     <% } else { %>
-                <option label="<%= book.title %>%>" value="<%= book.id %>">
+                <option label="<%= copy.description %>%>" value="<%= copy.id %>">
                     <% } %>
                         <% }) %>
     </select>

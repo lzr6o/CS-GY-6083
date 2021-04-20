@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Payment = require('../models/payment')
 const Customer = require('../models/customer')
+const Invoice = require('../models/invoice')
 
 // all payments route
 router.get('/', async (req, res) => {
@@ -41,6 +42,7 @@ router.get('/new', async (req, res) => {
 router.post('/', async (req, res) => {
     const payment = new Payment({
         method: req.body.method,
+        invoice: req.body.invoice,
         customer: req.body.customer,
         payDate: new Date(req.body.payDate),
         amount: req.body.amount,
@@ -60,6 +62,7 @@ router.post('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const payment = await Payment.findById(req.params.id)
+            .populate('invoice')
             .populate('customer')
             .exec()
         res.render('payments/show', { payment : payment })
@@ -84,6 +87,7 @@ router.put('/:id', async (req, res) => {
     try {
         payment = await Payment.findById(req.params.id)
         payment.method = req.body.method
+        payment.invoice = req.body.invoice
         payment.customer = req.body.customer
         payment.payDate = new Date(req.body.payDate)
         payment.amount = req.body.amount
@@ -130,8 +134,10 @@ async function renderEditPage(res, payment, hasError = false) {
 
 async function renderFormPage(res, payment, form, hasError = false) {
     try {
+        const invoices = await Invoice.find({})
         const customers = await Customer.find({})
         const params = {
+            invoices: invoices,
             customers: customers,
             payment: payment
         }

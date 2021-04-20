@@ -11,6 +11,18 @@
     </select>
 </div>
 <div>
+    <label>Invoice</label>
+    <select name="invoice">
+        <% invoices.forEach(invoice => { %>
+            <% if (invoice.id===payment.invoice) { %>
+                <option selected label="<%= invoice.id %>" value="<%= invoice.id %>">
+                    <% } else { %>
+                <option label="<%= invoice.id %>%>" value="<%= invoice.id %>">
+                    <% } %>
+                        <% }) %>
+    </select>
+</div>
+<div>
     <label>Pay Date</label>
     <input type="date" name="payDate" value="<%= payment.payDate == null ? '' :
     payment.payDate.toISOString().split('T')[0] %>">

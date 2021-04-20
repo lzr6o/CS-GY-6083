@@ -17,6 +17,7 @@
 <br>
 <% rentals.forEach(rental => { %>
     <div>
+        <%= rental.id %>
         <%= rental.borrowDate.toDateString() %>
         <%= rental.status %>
     </div>
