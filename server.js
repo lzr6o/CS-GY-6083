@@ -20,6 +20,8 @@ const copyRouter = require('./routes/copies')
 const invoiceRouter = require('./routes/invoices')
 const roomRouter = require('./routes/rooms')
 const reservationRouter = require('./routes/reservations')
+const registrationRouter = require('./routes/registrations')
+const invitationRouter = require('./routes/invitations')
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
