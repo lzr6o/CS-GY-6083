@@ -10,6 +10,9 @@ router.get('/', async (req, res) => {
     if (req.query.name != null && req.query.name != '') {
         query = query.regex('name', new RegExp(req.query.name, 'i'))
     }
+    if (req.query.type != null && req.query.type != '') {
+        query = query.regex('type', new RegExp(req.query.type, 'i'))
+    }
     if (req.query.endBefore != null && req.query.endBefore != '') {
         query = query.lte('endTime', req.query.endBefore)
     }
@@ -36,6 +39,7 @@ router.get('/new', async (req, res) => {
 router.post('/', async (req, res) => {
     const event = new Event({
         name: req.body.name,
+        type: req.body.type,
         topic: req.body.topic,
         description: req.body.description,
         startTime: new Date(req.body.startTime),
@@ -78,6 +82,7 @@ router.put('/:id', async (req, res) => {
     try {
         event = await Event.findById(req.params.id)
         event.name = req.body.name
+        event.type = req.body.type
         event.topic = req.body.topic
         event.description = req.body.description
         event.startTime = req.body.startTime

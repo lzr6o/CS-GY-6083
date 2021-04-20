@@ -16,7 +16,10 @@
 </div>
 <div>
     <label>Gender</label>
-    <input type="text" name="gender" value="<%= customer.gender %>">
+    <select name="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
 </div>
 <div>
     <label>Email</label>
@@ -47,11 +50,15 @@
     <input type="text" name="country" value="<%= customer.country %>">
 </div>
 <div>
-    <label>IdentificationType</label>
-    <input type="text" name="identificationType" value="<%= customer.identificationType %>">
+    <label>Identification Type</label>
+    <select name="identificationType">
+        <option value="Passport">Passport</option>
+        <option value="SSN">SSN</option>
+        <option value="Driver License">Driver License</option>
+    </select>
 </div>
 <div>
-    <label>IdentificationNumber</label>
+    <label>Identification Number</label>
     <input type="text" name="identificationNumber" value="<%= customer.identificationNumber %>">
 </div>
 <div>

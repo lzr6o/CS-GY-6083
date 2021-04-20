@@ -29,7 +29,13 @@
 </div>
 <div>
     <label>Method</label>
-    <input type="text" name="method" value="<%= payment.method %>">
+    <select name="method">
+        <option value="Cash">Cash</option>
+        <option value="Credit">Credit</option>
+        <option value="Debit">Debit</option>
+        <option value="Apple Pay">Apple Pay</option>
+        <option value="Paypal">Paypal</option>
+    </select>
 </div>
 <div>
     <label>Amount</label>
