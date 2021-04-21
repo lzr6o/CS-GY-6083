@@ -1,0 +1,17 @@
+<h2>Invitation List</h2>
+<form action="/invitations" method="GET">
+    <div>
+        <label>ID</label>
+        <input type="text" name="id" value="<%= searchOptions.id %>">
+    </div>
+    <button type="submit">Search</button>
+</form>
+<br>
+<% invitations.forEach(invitation => { %>
+    <div>
+        <%= invitation.id %>
+    </div>
+    <a href="/invitations/<%= invitation.id %>">View</a>
+    <a href="/invitations/<%= invitation.id %>/edit">Edit</a>
+    <%- include('../partials/deleteForm', { url: `/invitations/${invitation.id}` }) %>
+        <% }) %>

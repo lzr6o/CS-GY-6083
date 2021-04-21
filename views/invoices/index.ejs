@@ -1,14 +1,6 @@
 <h2>Search Invoice</h2>
 <form action="/invoices" method="GET">
     <div>
-        <label>Payer</label>
-        <input type="text" name="payer" value="<%= searchOptions.payer %>">
-    </div>
-    <div>
-        <label>Status</label>
-        <input type="text" name="status" value="<%= searchOptions.status %>">
-    </div>
-    <div>
         <label>Amount Above</label>
         <input type="number" name="amountAbove" min="0.0" step="0.01" value="<%= searchOptions.amountAbove %>">
     </div>

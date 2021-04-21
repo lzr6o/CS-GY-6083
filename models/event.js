@@ -21,6 +21,10 @@ const eventSchema = new mongoose.Schema({
         type: Date,
         required: true
     },
+    expense: {
+        type: Number,
+        default: null
+    },
     coverImage: {
         type: Buffer,
         required: true

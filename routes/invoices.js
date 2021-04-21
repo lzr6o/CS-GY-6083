@@ -6,9 +6,6 @@ const Rental = require('../models/rental')
 // all invoices route
 router.get('/', async (req, res) => {
     let query = Invoice.find()
-    if (req.query.status != null && req.query.status != '') {
-        query = query.regex('status', new RegExp(req.query.status, 'i'))
-    }
     if (req.query.amountUnder != null && req.query.amountUnder != '') {
         query = query.lte('amount', req.query.amountUnder)
     }
@@ -40,7 +37,6 @@ router.get('/new', async (req, res) => {
 // create invoice route
 router.post('/', async (req, res) => {
     const invoice = new Invoice({
-        status: req.body.status,
         dateGenerated: new Date(req.body.dateGenerated),
         amount: req.body.amount,
         rental: req.body.rental
@@ -80,7 +76,6 @@ router.put('/:id', async (req, res) => {
     let invoice
     try {
         invoice = await Invoice.findById(req.params.id)
-        invoice.status = req.body.status
         invoice.dateGenerated = new Date(req.body.dateGenerated)
         invoice.amount = req.body.amount
         invoice.rental = req.body.rental

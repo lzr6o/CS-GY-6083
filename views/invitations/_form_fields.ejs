@@ -1,0 +1,24 @@
+<div>
+    <label>Author</label>
+    <select name="author">
+        <% authors.forEach(author => { %>
+            <% if (author.id===invitation.author) { %>
+                <option selected label="<%= author.fullName %>" value="<%= author.id %>">
+                    <% } else { %>
+                <option label="<%= author.fullName %>" value="<%= author.id %>">
+                    <% } %>
+                        <% }) %>
+    </select>
+</div>
+<div>
+    <label>Event</label>
+    <select name="event">
+        <% events.forEach(event => { %>
+            <% if (event.id===invitation.event) { %>
+                <option selected label="<%= event.name %>" value="<%= event.id %>">
+                    <% } else { %>
+                <option label="<%= event.name %>" value="<%= event.id %>">
+                    <% } %>
+                        <% }) %>
+    </select>
+</div>

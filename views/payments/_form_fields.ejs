@@ -49,8 +49,3 @@
     <label>Card Number</label>
     <input type="number" name="cardNumber" value="<%= payment.cardNumber %>">
 </div>
-<div>
-    <label>Card Expiration Date</label>
-    <input type="date" name="cardExpirationDate" value="<%= payment.cardExpirationDate == null ? '' :
-    payment.cardExpirationDate.toISOString().split('T')[0] %>">
-</div>

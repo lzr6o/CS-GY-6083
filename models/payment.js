@@ -14,18 +14,17 @@ const paymentSchema = new mongoose.Schema({
         required: true
     },
     cardHolderName: {
-        type: String
+        type: String,
+        default: null
     },
     cardNumber: {
-        type: Number
+        type: Number,
+        default: null
     },
     createdAt: {
         type: Date,
         required: true,
         default: Date.now
-    },
-    cardExpirationDate: {
-        type: Date
     },
     customer: {
         type: mongoose.Schema.Types.ObjectId,

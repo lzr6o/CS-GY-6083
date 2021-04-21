@@ -42,6 +42,7 @@ router.post('/', async (req, res) => {
         type: req.body.type,
         topic: req.body.topic,
         description: req.body.description,
+        expense: req.body.expense,
         startTime: new Date(req.body.startTime),
         endTime: new Date(req.body.endTime)
     })
@@ -85,6 +86,7 @@ router.put('/:id', async (req, res) => {
         event.type = req.body.type
         event.topic = req.body.topic
         event.description = req.body.description
+        event.expense = req.body.expense
         event.startTime = req.body.startTime
         event.endTime = req.body.endTime
         if (req.body.cover != null && req.body.cover !== '') {

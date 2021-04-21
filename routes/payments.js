@@ -47,8 +47,7 @@ router.post('/', async (req, res) => {
         payDate: new Date(req.body.payDate),
         amount: req.body.amount,
         cardHolderName: req.body.cardHolderName,
-        cardNumber: req.body.cardNumber,
-        cardExpirationDate: new Date(req.body.cardExpirationDate)
+        cardNumber: req.body.cardNumber
     })
     try {
         const newPayment = await payment.save()
@@ -93,7 +92,6 @@ router.put('/:id', async (req, res) => {
         payment.amount = req.body.amount
         payment.cardHolderName = req.body.cardHolderName
         payment.cardNumber = req.body.cardNumber
-        payment.cardExpirationDate = new Date(req.body.cardExpirationDate)
         await payment.save()
         res.redirect(`/payments/${payment.id}`)
     } catch {
