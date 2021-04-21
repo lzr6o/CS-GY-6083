@@ -33,8 +33,8 @@
 <% payments.forEach(payment => { %>
     <div>
         <%= payment.method %>
-        <%= payment.amount %>
-        <%= payment.payDate.toDateString() %>
+            <%= payment.amount %>
+                <%= payment.payDate.toDateString() %>
     </div>
     <a href="/payments/<%= payment.id %>">View</a>
     <a href="/payments/<%= payment.id %>/edit">Edit</a>

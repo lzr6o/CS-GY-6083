@@ -1,0 +1,6 @@
+<h2>Edit Sponsor</h2>
+<form action="/sponsors/<%= sponsor.id %>?_method=PUT" method="POST">
+    <%- include('_form_fields') %>
+    <a href="/sponsors">Cancel</a>
+    <button type="submit">Update</button>
+</form>
