@@ -1,0 +1,21 @@
+<h2>Search Fund</h2>
+<form action="/funds" method="GET"></form>
+    <div>
+        <label>Amount Above</label>
+        <input type="number" name="amountAbove" min="0.0" step="0.01" value="<%= searchOptions.amountAbove %>">
+    </div>
+    <div>
+        <label>Amount Under</label>
+        <input type="number" name="amountUnder" min="0.0" step="0.01" value="<%= searchOptions.amountUnder %>">
+    </div>
+    <button type="submit">Search</button>
+</form>
+<br>
+<% funds.forEach(fund => { %>
+    <div>
+        <%= fund.amount %>
+    </div>
+    <a href="/funds/<%= fund.id %>">View</a>
+    <a href="/funds/<%= fund.id %>/edit">Edit</a>
+    <%- include('../partials/deleteForm', { url: `/funds/${fund.id}` }) %>
+        <% }) %>

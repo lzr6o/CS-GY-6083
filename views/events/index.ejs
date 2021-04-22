@@ -1,0 +1,32 @@
+<h2>Search Event</h2>
+<form action="/events" method="GET">
+    <div>
+        <label>Name</label>
+        <input type="text" name="name" value="<%= searchOptions.name %>">
+    </div>
+    <div>
+        <label>Type</label>
+        <select name="type">
+            <option value=""></option>
+            <option value="Seminar">Seminar</option>
+            <option value="Exhibition">Exhibition</option>
+        </select>
+    </div>
+    <div>
+        <label>Start After</label>
+        <input type="datetime-local" name="startAfter" value="<%= searchOptions.startAfter %>">
+    </div>
+    <div>
+        <label>End Before</label>
+        <input type="datetime-local" name="endBefore" value="<%= searchOptions.endBefore %>">
+    </div>
+    <button type="submit">Search</button>
+</form>
+<br>
+<div>
+    <% events.forEach(event => { %>
+        <a href="/events/<%= event.id %>">
+            <img height="100" width="150" src="<%= event.coverImagePath %>">
+        </a>
+        <% }) %>
+</div>

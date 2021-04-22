@@ -1,0 +1,13 @@
+<div>
+    ID: <%= registration.id %>
+</div>
+<div>
+    Customer: <%= registration.customer.fullName %>
+</div>
+<div>
+    Event: <%= registration.event.name %>
+</div>
+<a href="/registrations/<%= registration.id %>/edit">Edit</a>
+<%- include('../partials/deleteForm', { url: `/registrations/${registration.id}` }) %>
+<a href="/customers/<%= registration.customer.id %>">View Customer</a>
+<a href="/events/<%= registration.event.id %>">View Event</a>

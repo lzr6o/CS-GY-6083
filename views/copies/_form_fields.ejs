@@ -1,0 +1,19 @@
+<div>
+    <label>Status</label>
+    <select name="status">
+        <option value="Available">Available</option>
+        <option value="Unavailable">Unavailable</option>
+    </select>
+</div>
+<div>
+    <label>Book</label>
+    <select name="book">
+        <% books.forEach(book => { %>
+            <% if (book.id===copy.book) { %>
+                <option selected label="<%= book.title %>" value="<%= book.id %>">
+                    <% } else { %>
+                <option label="<%= book.title %>" value="<%= book.id %>">
+                    <% } %>
+                        <% }) %>
+    </select>
+</div>

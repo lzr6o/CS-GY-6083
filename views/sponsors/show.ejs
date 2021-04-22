@@ -1,0 +1,12 @@
+<h2>
+    Name: <%= sponsor.name %>
+</h2>
+<img width="150" height="150" src="<%= sponsor.coverImagePath %>">
+<div>
+    ID: <%= sponsor.id %>
+</div>
+<div>
+    Type: <%= sponsor.type %>
+</div>
+<a href="/sponsors/<%= sponsor.id %>/edit">Edit</a>
+<%- include('../partials/deleteForm', { url: `/sponsors/${sponsor.id}` }) %>

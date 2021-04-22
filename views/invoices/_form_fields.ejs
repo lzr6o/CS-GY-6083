@@ -1,0 +1,21 @@
+<div>
+    <label>Rental</label>
+    <select name="rental">
+        <% rentals.forEach(rental => { %>
+            <% if (rental.id===invoice.rental) { %>
+                <option selected label="<%= rental.description %>" value="<%= rental.id %>">
+                    <% } else { %>
+                <option label="<%= rental.description %>" value="<%= rental.id %>">
+                    <% } %>
+                        <% }) %>
+    </select>
+</div>
+<div>
+    <label>Date Generated</label>
+    <input type="date" name="dateGenerated" value="<%= invoice.dateGenerated == null ? '' :
+    invoice.dateGenerated.toISOString().split('T')[0] %>">
+</div>
+<div>
+    <label>Amount</label>
+    <input type="float" name="amount" min="0.0" step="0.01" value="<%= invoice.amount %>">
+</div>

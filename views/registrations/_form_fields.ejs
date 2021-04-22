@@ -1,0 +1,24 @@
+<div>
+    <label>Customer</label>
+    <select name="customer">
+        <% customers.forEach(customer => { %>
+            <% if (customer.id===registration.customer) { %>
+                <option selected label="<%= customer.fullName %>" value="<%= customer.id %>">
+                    <% } else { %>
+                <option label="<%= customer.fullName %>" value="<%= customer.id %>">
+                    <% } %>
+                        <% }) %>
+    </select>
+</div>
+<div>
+    <label>Event</label>
+    <select name="event">
+        <% events.forEach(event => { %>
+            <% if (event.id===registration.event) { %>
+                <option selected label="<%= event.name %>" value="<%= event.id %>">
+                    <% } else { %>
+                <option label="<%= event.name %>" value="<%= event.id %>">
+                    <% } %>
+                        <% }) %>
+    </select>
+</div>

@@ -1,0 +1,12 @@
+<div>
+    ID: <%= invoice.id %>
+</div>
+<div>
+    Date Generated: <%= invoice.dateGenerated.toDateString() %>
+</div>
+<div>
+    Amount: <%= invoice.amount %>
+</div>
+<a href="/invoices/<%= invoice.id %>/edit">Edit</a>
+<%- include('../partials/deleteForm', { url: `/invoices/${invoice.id}` }) %>
+<a href="/rentals/<%= invoice.rental.id %>">View Rental</a>

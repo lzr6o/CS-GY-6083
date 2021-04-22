@@ -1,0 +1,30 @@
+<h2>Search Sponsor</h2>
+<form action="/sponsors" method="GET">
+    <div>
+        <label>Type</label>
+        <select name="type">
+            <option value=""></option>
+            <option value="Individual">Individual</option>
+            <option value="Organization">Organization</option>
+        </select>
+    </div>
+    <div>
+        <label>Name</label>
+        <input type="text" name="name" value="<%= searchOptions.name %>">
+    </div>
+    <button type="submit">Search</button>
+</form>
+<br>
+<% sponsors.forEach(sponsor => { %>
+    <div>
+        <%= sponsor.name %>
+    </div>
+    <div>
+        <a href="/sponsors/<%= sponsor.id %>">
+            <img height="150" width="150" src="<%= sponsor.coverImagePath %>">
+        </a>
+    </div>
+    <a href="/sponsors/<%= sponsor.id %>">View</a>
+    <a href="/sponsors/<%= sponsor.id %>/edit">Edit</a>
+    <%- include('../partials/deleteForm', { url: `/sponsors/${sponsor.id}` }) %>
+        <% }) %>
