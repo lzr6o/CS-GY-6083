@@ -1,0 +1,35 @@
+<h2>Customer</h2>
+<h2>Profile</h2>
+<a href='profile'>View</a>
+<h2>Register for an Exhibition</h2>
+<div>
+    <% events.forEach(event => { %>
+        <a href="/events/<%= event.id %>">
+        <img height="100" width="150" src="<%= event.coverImagePath %>">
+        </a>
+        <% }) %>
+</div>
+<h2>Borrow a Book</h2>
+<div>
+    <% books.forEach(book => { %>
+        <a href="/books/<%= book.id %>">
+        <img height="150" width="100" src="<%= book.coverImagePath %>">
+        </a>
+        <% }) %>
+</div>
+<h2>Reserve a Room</h2>
+<div>
+    <% rooms.forEach(room => { %>
+        <a href="/rooms/<%= room.id %>">
+        <img height="100" width="150" src="<%= room.coverImagePath %>">
+        </a>
+        <% }) %>
+</div>
+<h2>Author</h2>
+<div>
+    <% authors.forEach(author => { %>
+        <a href="/authors/<%= author.id %>">
+        <img height="100" width="100" src="<%= author.coverImagePath %>">
+        </a>
+        <% }) %>
+</div>

@@ -29,6 +29,8 @@ router.get('/new', (req, res) => {
 // create author route
 router.post('/', async (req, res) => {
     const author = new Author({
+        username: req.body.username,
+        password: req.body.password,
         fullName: req.body.firstName + ' ' + req.body.lastName,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -82,7 +84,9 @@ router.put('/:id', async (req, res) => {
     let author
     try {
         author = await Author.findById(req.params.id)
-        author.fullName = req.body.firstName + ' ' + req.body.lastName,
+        author.username = req.body.username
+        author.password = req.body.password
+        author.fullName = req.body.firstName + ' ' + req.body.lastName
         author.firstName = req.body.firstName
         author.lastName = req.body.lastName
         author.gender = req.body.gender
