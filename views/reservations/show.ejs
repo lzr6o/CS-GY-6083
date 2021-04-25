@@ -13,7 +13,5 @@
 <div>
     Timeslot: <%= reservation.timeslot %>
 </div>
-<a href="/reservations/<%= reservation.id %>/edit">Edit</a>
-<%- include('../partials/deleteForm', { url: `/reservations/${reservation.id}` }) %>
 <a href="/customers/<%= reservation.customer.id %>">View Customer</a>
 <a href="/rooms/<%= reservation.room.id %>">View Room</a>

@@ -7,33 +7,33 @@
 </nav>
 <h2>Customer</h2>
 <div>
-    <% customers.forEach(customer => { %>
+    <% customers.forEach(customer=> { %>
         <a href="/customers/<%= customer.id %>">
-        <img height="100" width="100" src="<%= customer.coverImagePath %>">
+            <img height="100" width="100" src="<%= customer.coverImagePath %>">
         </a>
         <% }) %>
 </div>
 <h2>Author</h2>
 <div>
-    <% authors.forEach(author => { %>
+    <% authors.forEach(author=> { %>
         <a href="/authors/<%= author.id %>">
-        <img height="100" width="100" src="<%= author.coverImagePath %>">
+            <img height="100" width="100" src="<%= author.coverImagePath %>">
         </a>
         <% }) %>
 </div>
 <h2>Event</h2>
 <div>
-    <% events.forEach(event => { %>
+    <% events.forEach(event=> { %>
         <a href="/events/<%= event.id %>">
-        <img height="100" width="150" src="<%= event.coverImagePath %>">
+            <img height="100" width="150" src="<%= event.coverImagePath %>">
         </a>
         <% }) %>
 </div>
 <h2>Book</h2>
 <div>
-    <% books.forEach(book => { %>
+    <% books.forEach(book=> { %>
         <a href="/books/<%= book.id %>">
-        <img height="150" width="100" src="<%= book.coverImagePath %>">
+            <img height="150" width="100" src="<%= book.coverImagePath %>">
         </a>
         <% }) %>
 </div>

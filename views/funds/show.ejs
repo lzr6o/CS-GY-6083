@@ -10,7 +10,5 @@
 <div>
     Amount: <%= fund.amount %>
 </div>
-<a href="/funds/<%= fund.id %>/edit">Edit</a>
-<%- include('../partials/deleteForm', { url: `/funds/${fund.id}` }) %>
 <a href="/events/<%= fund.event.id %>">View Event</a>
 <a href="/sponsors/<%= fund.sponsor.id %>">View Sponsor</a>

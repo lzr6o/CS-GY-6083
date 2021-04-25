@@ -23,6 +23,4 @@
 <div>
     End Time: <%= event.endTime %>
 </div>
-<a href="/events/<%= event.id %>/edit">Edit</a>
-<%- include('../partials/deleteForm', { url: `/events/${event.id}` }) %>
 <a href="/topics/<%= event.topic.id %>">View Topic</a>

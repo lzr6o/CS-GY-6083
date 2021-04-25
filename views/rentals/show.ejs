@@ -19,7 +19,5 @@
 <div>
     Status: <%= rental.status %>
 </div>
-<a href="/rentals/<%= rental.id %>/edit">Edit</a>
-<%- include('../partials/deleteForm', { url: `/rentals/${rental.id}` }) %>
 <a href="/customers/<%= rental.customer.id %>">View Customer</a>
 <a href="/copies/<%= rental.copy.id %>">View Copy</a>

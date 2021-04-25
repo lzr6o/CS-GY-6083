@@ -8,6 +8,3 @@
     Capacity: <%= room.capacity %>
 </div>
 <img width="150" height="100" src="<%= room.coverImagePath %>">
-<br>
-<a href="/rooms/<%= room.id %>/edit">Edit</a>
-<%- include('../partials/deleteForm', { url: `/rooms/${room.id}` }) %>

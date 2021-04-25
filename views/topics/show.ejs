@@ -8,6 +8,3 @@
     Description: <%= topic.description %>
 </div>
 <img width="150" height="150" src="<%= topic.coverImagePath %>">
-<br>
-<a href="/topics/<%= topic.id %>/edit">Edit</a>
-<%- include('../partials/deleteForm', { url: `/topics/${topic.id}` }) %>

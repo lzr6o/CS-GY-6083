@@ -7,7 +7,5 @@
 <div>
     Event: <%= invitation.event.name %>
 </div>
-<a href="/invitations/<%= invitation.id %>/edit">Edit</a>
-<%- include('../partials/deleteForm', { url: `/invitations/${invitation.id}` }) %>
 <a href="/authors/<%= invitation.author.id %>">View Author</a>
 <a href="/events/<%= invitation.event.id %>">View Event</a>

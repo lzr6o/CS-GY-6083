@@ -23,7 +23,5 @@
 <div>
     Description: <%= book.description %>
 </div>
-<a href="/books/<%= book.id %>/edit">Edit</a>
-<%- include('../partials/deleteForm', { url: `/books/${book.id}` }) %>
 <a href="/authors/<%= book.author.id %>">View Author</a>
 <a href="/topics/<%= book.topic.id %>">View Topic</a>

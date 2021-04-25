@@ -3,6 +3,9 @@
 </h2>
 <img width="150" height="150" src="<%= author.coverImagePath %>">
 <div>
+    Role: <%= author.role %>
+</div>
+<div>
     ID: <%= author.id %>
 </div>
 <div>
@@ -35,13 +38,11 @@
 <div>
     Country: <%= author.country %>
 </div>
-<a href="/authors/<%= author.id %>/edit">Edit</a>
-<%- include('../partials/deleteForm', { url: `/authors/${author.id}` }) %>
-    <% if (booksByAuthor.length> 0) { %>
-        <h2>Books By Author</h2>
-        <% booksByAuthor.forEach(book=> { %>
-            <a href="/books/<%= book.id %>">
-                <img height="150" width="100" src="<%=book.coverImagePath %>">
-            </a>
-            <% }) %>
-                <% } %>
+<% if (booksByAuthor.length> 0) { %>
+    <h2>Books By Author</h2>
+    <% booksByAuthor.forEach(book=> { %>
+        <a href="/books/<%= book.id %>">
+            <img height="150" width="100" src="<%=book.coverImagePath %>">
+        </a>
+        <% }) %>
+            <% } %>

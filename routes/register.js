@@ -3,7 +3,6 @@ const router = express.Router()
 const Customer = require('../models/customer')
 const Author = require('../models/author')
 const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif']
-const bcrypt = require('bcrypt')
 
 router.get('/', async (req, res) => {
     res.render('register')
@@ -19,10 +18,9 @@ router.get('/author', async (req, res) => {
 
 // customer register route
 router.post('/customer', async (req, res) => {
-    const hashedPassword = await bcrypt.hash(req.body.password, 10)
     const customer = new Customer({
         username: req.body.username,
-        password: hashedPassword,
+        password: req.body.password,
         fullName: req.body.firstName + ' ' + req.body.lastName,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -40,9 +38,9 @@ router.post('/customer', async (req, res) => {
     saveCustomerCover(customer, req.body.cover)
     try {
         await customer.save()
-        res.redirect('/login')
+        res.redirect('/login/customer')
     } catch {
-        res.redirect('/register')
+        res.redirect('/register/customer')
     }
 })
 
@@ -57,10 +55,9 @@ function saveCustomerCover(customer, coverEncoded) {
 
 // author register route
 router.post('/author', async (req, res) => {
-    const hashedPassword = await bcrypt.hash(req.body.password, 10)
     const author = new Author({
         username: req.body.username,
-        password: hashedPassword,
+        password: req.body.password,
         fullName: req.body.firstName + ' ' + req.body.lastName,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -76,9 +73,9 @@ router.post('/author', async (req, res) => {
     saveAuthorCover(author, req.body.cover)
     try {
         await author.save()
-        res.redirect('/login')
+        res.redirect('/login/author')
     } catch {
-        res.redirect('/register')
+        res.redirect('/register/author')
     }
 })
 

@@ -3,6 +3,9 @@
 </h2>
 <img width="150" height="150" src="<%= customer.coverImagePath %>">
 <div>
+    Role: <%= customer.role %>
+</div>
+<div>
     ID: <%= customer.id %>
 </div>
 <div>
@@ -41,5 +44,3 @@
 <div>
     Identification Number: <%= customer.identificationNumber %>
 </div>
-<a href="/customers/<%= customer.id %>/edit">Edit</a>
-<%- include('../partials/deleteForm', { url: `/customers/${customer.id}` }) %>
