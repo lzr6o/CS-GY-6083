@@ -16,38 +16,37 @@ router.get('/author', async (req, res) => {
 })
 
 // customer login route
-router.get('/customer/login', async (req, res) => {
-    username = req.body.username
-    password = req.body.password
-    try {
-        const customer = await Customer.find({ username: username }, { password: password })
-        console.log(customer)
-        res.render('admin', {
-            customer: customer,
-            searchOptions: req.query
-        })
-    } catch {
-        res.redirect('/customer/login')
-    }
+router.post('/customer', async (req, res) => {
+    var username = req.body.username
+    var password = req.body.password
+    Customer.find({ username: username, password: password }, function(err, user) {
+        if (err) {
+            return res.status(500).send()
+        }
+        if (!user) {
+            return res.status(404).send()
+        }
+        res.redirect('../customer')
+    })
 })
 
 // author login route
-router.get('/author/login', async (req, res) => {
-    let query = Author.find()
-    if (req.query.username != null && req.query.username !== '') {
-        query = query.regex('username', new RegExp(req.query.username, 'i'))
-    }
-    if (req.query.password != null && req.query.password !== '') {
-        query = query.regex('password', new RegExp(req.query.password, 'i'))
-    }
+router.post('/author', async (req, res) => {
+    var username = req.body.username
+    var password = req.body.password
     try {
-        const author = await query.exec()
-        res.render('author/index', {
-            author: author,
-            searchOptions: req.query
-        })
+        author = await Author.find({ username: username, password: password })
+        console.log(author)
+        if (author) {
+            res.redirect('../author')
+        }
+        else {
+            res.render('login/author', {
+                errorMessage: 'User Not Find'
+            })
+        }
     } catch {
-        res.redirect('/author/login')
+        res.redirect('/login/author')
     }
 })
 

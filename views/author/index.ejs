@@ -1,1 +1,12 @@
 <h2>Hi Author</h2>
+<div>
+    <%= author.fullName %>
+</div>
+<div>
+    <a href="/authors/<%= author.id %>">
+        <img height="150" width="150" src="<%= author.coverImagePath %>">
+    </a>
+</div>
+<a href="/authors/<%= author.id %>">View</a>
+<a href="/authors/<%= author.id %>/edit">Edit</a>
+<%- include('../partials/deleteForm', { url: `/authors/${author.id}` }) %>
