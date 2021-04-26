@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
 const Customer = require('../models/customer')
-const Author = require('../models/author')
-const Event = require('../models/event')
-const Book = require('../models/book')
-const Room = require('../models/room')
+const Payment = require('../models/payment')
+const Rental = require('../models/rental')
+const Registration = require('../models/registration')
+const Reservation = require('../models/reservation')
 const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif']
 
 // customer login route
@@ -17,11 +17,20 @@ router.post('/login', async (req, res) => {
     var username = req.body.username
     var password = req.body.password
     const customer = await Customer.findOne({ username: username, password: password })
+    const payments = await Payment.find({ customer: customer })
+    const rentals = await Rental.find({ customer: customer })
+    const registrations = await Registration.find({ customer : customer })
+    const reservations = await Reservation.find({ customer : customer })
     if (!customer) {
         res.render('customer/login', { errorMessage: 'Error Login in' })
-    }
-    else {
-        res.render('customer', { customer: customer })
+    } else {
+        res.render('customer', {
+            customer: customer,
+            payments: payments,
+            rentals: rentals,
+            registrations: registrations,
+            reservations: reservations
+        })
     }
 })
 

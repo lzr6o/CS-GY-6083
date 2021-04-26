@@ -1,43 +1,48 @@
 <nav>
-    <li><a href='/admin'>Admin</a></li>
-    <li><a href='/customer'>Customer</a></li>
-    <li><a href='/author'>Author</a></li>
-    
     <li><a href='/customer/login'>Customer Login</a></li>
     <li><a href='/author/login'>Author Login</a></li>
-
     <li><a href='/customer/register'>Customer Register</a></li>
     <li><a href='/author/register'>Author Register</a></li>
 </nav>
+<h2>Sponsor</h2>
+<div>
+    <% sponsors.forEach(sponsor=> { %>
+        <a><img height="100" width="100" src="<%= sponsor.coverImagePath %>"></a>
+        <% }) %>
+</div>
 <h2>Customer</h2>
 <div>
     <% customers.forEach(customer=> { %>
-        <a href="/customers/<%= customer.id %>">
-            <img height="100" width="100" src="<%= customer.coverImagePath %>">
-        </a>
+        <a><img height="100" width="100" src="<%= customer.coverImagePath %>"></a>
         <% }) %>
 </div>
 <h2>Author</h2>
 <div>
     <% authors.forEach(author=> { %>
-        <a href="/authors/<%= author.id %>">
-            <img height="100" width="100" src="<%= author.coverImagePath %>">
-        </a>
+        <a><img height="100" width="100" src="<%= author.coverImagePath %>"></a>
         <% }) %>
 </div>
 <h2>Event</h2>
 <div>
     <% events.forEach(event=> { %>
-        <a href="/events/<%= event.id %>">
-            <img height="100" width="150" src="<%= event.coverImagePath %>">
-        </a>
+        <a><img height="100" width="150" src="<%= event.coverImagePath %>"></a>
         <% }) %>
 </div>
 <h2>Book</h2>
 <div>
     <% books.forEach(book=> { %>
-        <a href="/books/<%= book.id %>">
-            <img height="150" width="100" src="<%= book.coverImagePath %>">
-        </a>
+        <a><img height="150" width="100" src="<%= book.coverImagePath %>"></a>
+        <% }) %>
+</div>
+<h2>Room</h2>
+<div>
+    <% rooms.forEach(room=> { %>
+        <a><img height="100" width="150" src="<%= room.coverImagePath %>"></a>
+        <% }) %>
+</div>
+<h2>Topic</h2>
+<div>
+    <% topics.forEach(topic=> { %>
+        <a><img height="100" width="100" src="<%= topic.coverImagePath %>"></a>
         <% }) %>
 </div>

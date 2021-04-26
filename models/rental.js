@@ -10,7 +10,8 @@ const rentalSchema = new mongoose.Schema({
         required: true
     },
     actualReturnDate: {
-        type: Date
+        type: Date,
+        default: Date.now
     },
     status: {
         type: String,

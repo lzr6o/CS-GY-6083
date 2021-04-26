@@ -3,9 +3,9 @@
     <select name="rental">
         <% rentals.forEach(rental => { %>
             <% if (rental.id===invoice.rental) { %>
-                <option selected label="<%= rental.description %>" value="<%= rental.id %>">
+                <option selected label="<%= rental.id %>" value="<%= rental.id %>">
                     <% } else { %>
-                <option label="<%= rental.description %>" value="<%= rental.id %>">
+                <option label="<%= rental.id %>" value="<%= rental.id %>">
                     <% } %>
                         <% }) %>
     </select>

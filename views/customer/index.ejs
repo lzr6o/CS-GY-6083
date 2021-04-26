@@ -1,1 +1,60 @@
-<h2>Hi Customer <%= customer.fullName %> </h2>
+<h1>Dear Customer</h1>
+<h2>
+    <%= customer.fullName %>
+</h2>
+<div>
+    <a href="/customer/<%= customer.id %>">Profile</a>
+    <a href='/books'>Books</a>
+    <a href='/payments/new'>Add Payment</a>
+    <a href='/rentals/new'>Add Rental</a>
+    <a href='/topics'>Topics</a>
+    <a href='/events'>Events</a>
+    <a href='/rooms'>Rooms</a>
+    <a href='/reservations/new'>Add Reservation</a>
+    <a href='/registrations/new'>Add Registration</a>
+    <a href='/sponsors/new'>Add Sponsor</a>
+    <a href='/funds/new'>Add Fund</a>
+</div>
+
+<% if (payments.length> 0) { %>
+    <h2>Payment</h2>
+    <% payments.forEach(payment=> { %>
+        <div>
+            ID: <%= payment.id %> <a href="/payments/<%= payment.id %>">View</a>
+        </div>
+        <br>
+        <% }) %>
+            <% } %>
+
+                <% if (rentals.length> 0) { %>
+                    <h2>Rental</h2>
+                    <% rentals.forEach(rental=> { %>
+                        <div>
+                            ID: <%= rental.id %> <a href="/rentals/<%= rental.id %>">View</a>
+                        </div>
+                        <br>
+                        <% }) %>
+                            <% } %>
+
+                                <% if (registrations.length> 0) { %>
+                                    <h2>Registration</h2>
+                                    <% registrations.forEach(registration=> { %>
+                                        <div>
+                                            ID: <%= registration.id %> <a
+                                                    href="/registrations/<%= registration.id %>">View</a>
+                                        </div>
+                                        <br>
+                                        <% }) %>
+                                            <% } %>
+
+                                                <% if (reservations.length> 0) { %>
+                                                    <h2>Reservation</h2>
+                                                    <% reservations.forEach(reservation=> { %>
+                                                        <div>
+                                                            ID: <%= reservation.id %> <a
+                                                                    href="/reservations/<%= reservation.id %>">View</a>
+                                                        </div>
+                                                        <br>
+                                                        <% }) %>
+                                                            <% } %>
+                                                                <div><a href='customer'>Logout</a></div>
