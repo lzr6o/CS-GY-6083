@@ -1,0 +1,48 @@
+<h2>
+    <%= customer.fullName %>
+</h2>
+<img width="150" height="150" src="<%= customer.coverImagePath %>">
+<div>
+    Role: <%= customer.role %>
+</div>
+<div>
+    ID: <%= customer.id %>
+</div>
+<div>
+    Username: <%= customer.username %>
+</div>
+<div>
+    Password: <%= customer.password %>
+</div>
+<div>
+    Gender: <%= customer.gender %>
+</div>
+<div>
+    Email: <%= customer.email %>
+</div>
+<div>
+    Phone: <%= customer.phone %>
+</div>
+<div>
+    Street: <%= customer.street %>
+</div>
+<div>
+    City: <%= customer.city %>
+</div>
+<div>
+    Zipcode: <%= customer.zipcode %>
+</div>
+<div>
+    State: <%= customer.state %>
+</div>
+<div>
+    Country: <%= customer.country %>
+</div>
+<div>
+    Identification Type: <%= customer.identificationType %>
+</div>
+<div>
+    Identification Number: <%= customer.identificationNumber %>
+</div>
+<a href="/customer/<%= customer.id %>/edit">Edit</a>
+<%- include('../partials/deleteForm', { url: `/customer/${customer.id}` }) %> 

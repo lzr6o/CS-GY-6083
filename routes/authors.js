@@ -21,11 +21,6 @@ router.get('/', async (req, res) => {
     }
 })
 
-// author login route
-router.get('/login', (req, res) => {
-    res.redirect('/login')
-})
-
 // new author route
 router.get('/new', (req, res) => {
     res.render('authors/new', { author: new Author() })
