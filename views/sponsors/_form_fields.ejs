@@ -1,19 +1,27 @@
-<div>
-    <label>Type</label>
-    <select name="type">
-        <option value="Individual">Individual</option>
-        <option value="Organization">Organization</option>
-    </select>
+<div class="form-row">
+    <div class="form-item">
+        <label>Type</label>
+        <select name="type">
+            <option value="Individual">Individual</option>
+            <option value="Organization">Organization</option>
+        </select>
+    </div>
 </div>
-<div>
-    <label>First Name</label>
-    <input type="text" name="firstName" value="<%= sponsor.firstName %>">
+
+<div class="form-row">
+    <div class="form-item">
+        <label>First Name</label>
+        <input type="text" name="firstName" value="<%= sponsor.firstName %>">
+    </div>
+    <div class="form-item">
+        <label>Last Name</label>
+        <input type="text" name="lastName" value="<%= sponsor.lastName %>">
+    </div>
 </div>
-<div>
-    <label>Last Name</label>
-    <input type="text" name="lastName" value="<%= sponsor.lastName %>">
-</div>
-<div>
-    <label>Cover</label>
-    <input type="file" name="cover" class="filepond">
+
+<div class="form-row">
+    <div class="form-item form-item-no-grow">
+        <label>Cover</label>
+        <input type="file" name="cover" class="filepond">
+    </div>
 </div>

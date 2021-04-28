@@ -1,19 +1,57 @@
 <h1>Dear Customer</h1>
 <h2>
     <%= customer.fullName %>
+    <div><a href='customer'>Logout</a></div>
 </h2>
-<div>
-    <a href="/customer/<%= customer.id %>">Profile</a>
-    <a href='/books'>Books</a>
-    <a href='/payments/new'>Add Payment</a>
-    <a href='/rentals/new'>Add Rental</a>
-    <a href='/topics'>Topics</a>
-    <a href='/events'>Events</a>
-    <a href='/rooms'>Rooms</a>
-    <a href='/reservations/new'>Add Reservation</a>
-    <a href='/registrations/new'>Add Registration</a>
-    <a href='/sponsors/new'>Add Sponsor</a>
-    <a href='/funds/new'>Add Fund</a>
+<div class = 'index-row'>
+    <div class = 'index-item-left'>
+      <a class = 'index-text' href="/customer/<%= customer.id %>">Profile</a>
+    </div>
+    <div class = 'index-item-right'>
+      <a class = 'index-text' href='/books'>Books</a>
+    </div>
+</div>
+
+<div class = 'index-row'>
+    <div class = 'index-item-left'>
+        <a class = 'index-text' href='/payments/new'>Add Payment</a>
+    </div>
+    <div class = 'index-item-right'>
+        <a class = 'index-text' href='/rentals/new'>Add Rental</a>
+    </div>
+</div>
+
+<div class = 'index-row'>
+    <div class = 'index-item-left'>
+        <a class = 'index-text' href='/topics'>Topics</a>
+    </div>
+    <div class = 'index-item-right'>
+        <a class = 'index-text' href='/events'>Events</a>
+    </div>
+</div>
+
+<div class = 'index-row'>
+    <div class = 'index-item-left'>
+        <a class = 'index-text' href='/rooms'>Rooms</a>
+    </div>
+    <div class = 'index-item-right'>
+        <a class = 'index-text' href='/reservations/new'>Add Reservation</a>
+    </div>
+</div>
+
+<div class = 'index-row'>
+    <div class = 'index-item-left'>
+        <a class = 'index-text' href='/registrations/new'>Add Registration</a>
+    </div>
+    <div class = 'index-item-right'>
+        <a class = 'index-text' href='/sponsors/new'>Add Sponsor</a>
+    </div>
+</div>
+
+<div class = 'index-row'>
+    <div class = 'index-item-left index-item-right'>
+        <a class = 'index-text' href='/funds/new'>Add Fund</a>
+    </div>
 </div>
 
 <% if (payments.length> 0) { %>
@@ -57,4 +95,3 @@
                                                         <br>
                                                         <% }) %>
                                                             <% } %>
-                                                                <div><a href='customer'>Logout</a></div>

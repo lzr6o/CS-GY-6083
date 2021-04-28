@@ -1,67 +1,90 @@
-<div>
-    <label>Username</label>
-    <input type="text" name="username" value="<%= customer.username %>">
+<div class="form-row">
+    <div class="form-item">
+        <label>Username</label>
+        <input type="text" name="username" value="<%= customer.username %>">
+    </div>
+    <div class="form-item">
+        <label>Password</label>
+        <input type="password" name="password" value="<%= customer.password %>">
+    </div>
 </div>
-<div>
-    <label>Password</label>
-    <input type="password" name="password" value="<%= customer.password %>">
+
+<div class="form-row">
+    <div class="form-item">
+        <label>First Name</label>
+        <input type="text" name="firstName" value="<%= customer.firstName %>">
+    </div>
+    <div class="form-item">
+        <label>Last Name</label>
+        <input type="text" name="lastName" value="<%= customer.lastName %>">
+    </div>
 </div>
-<div>
-    <label>First Name</label>
-    <input type="text" name="firstName" value="<%= customer.firstName %>">
+
+<div class="form-row">
+    <div class="form-item">
+        <label>Gender</label>
+        <select name="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+    </div>
+    <div class="form-item">
+        <label>Email</label>
+        <input type="email" name="email" value="<%= customer.email %>">
+    </div>
 </div>
-<div>
-    <label>Last Name</label>
-    <input type="text" name="lastName" value="<%= customer.lastName %>">
+
+<div class="form-row">
+    <div class="form-item">
+        <label>Phone</label>
+        <input type="number" name="phone" value="<%= customer.phone %>">
+    </div>
+    <div class="form-item">
+        <label>Street</label>
+        <input type="text" name="street" value="<%= customer.street %>">
+    </div>
 </div>
-<div>
-    <label>Gender</label>
-    <select name="gender">
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-    </select>
+
+<div class="form-row">
+    <div class="form-item">
+        <label>City</label>
+        <input type="text" name="city" value="<%= customer.city %>">
+    </div>
+    <div class="form-item">
+        <label>Zipcode</label>
+        <input type="number" name="zipcode" value="<%= customer.zipcode %>">
+    </div>
 </div>
-<div>
-    <label>Email</label>
-    <input type="email" name="email" value="<%= customer.email %>">
+
+<div class="form-row">
+    <div class="form-item">
+        <label>State</label>
+        <input type="text" name="state" value="<%= customer.state %>">
+    </div>
+    <div class="form-item">
+        <label>Country</label>
+        <input type="text" name="country" value="<%= customer.country %>">
+    </div>
 </div>
-<div>
-    <label>Phone</label>
-    <input type="number" name="phone" value="<%= customer.phone %>">
+
+<div class="form-row">
+    <div class="form-item">
+        <label>Identification Type</label>
+        <select name="identificationType">
+            <option value="Passport">Passport</option>
+            <option value="SSN">SSN</option>
+            <option value="Driver License">Driver License</option>
+        </select>
+    </div>
+    <div class="form-item">
+        <label>Identification Number</label>
+        <input type="text" name="identificationNumber" value="<%= customer.identificationNumber %>">
+    </div>
 </div>
-<div>
-    <label>Street</label>
-    <input type="text" name="street" value="<%= customer.street %>">
-</div>
-<div>
-    <label>City</label>
-    <input type="text" name="city" value="<%= customer.city %>">
-</div>
-<div>
-    <label>Zipcode</label>
-    <input type="number" name="zipcode" value="<%= customer.zipcode %>">
-</div>
-<div>
-    <label>State</label>
-    <input type="text" name="state" value="<%= customer.state %>">
-</div>
-<div>
-    <label>Country</label>
-    <input type="text" name="country" value="<%= customer.country %>">
-</div>
-<div>
-    <label>Identification Type</label>
-    <select name="identificationType">
-        <option value="Passport">Passport</option>
-        <option value="SSN">SSN</option>
-        <option value="Driver License">Driver License</option>
-    </select>
-</div>
-<div>
-    <label>Identification Number</label>
-    <input type="text" name="identificationNumber" value="<%= customer.identificationNumber %>">
-</div>
-<div>
-    <label>Cover</label>
-    <input type="file" name="cover" class="filepond">
+
+<div class="form-row">
+    <div class="form-item form-item-no-grow">
+        <label>Cover</label>
+        <input type="file" name="cover" class="filepond">
+    </div>
 </div>

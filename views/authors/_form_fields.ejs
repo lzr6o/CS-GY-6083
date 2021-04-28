@@ -1,55 +1,75 @@
-<div>
-    <label>Username</label>
-    <input type="text" name="username" value="<%= author.username %>">
+<div class="form-row">
+    <div class="form-item">
+        <label>Username</label>
+        <input type="text" name="username" value="<%= author.username %>">
+    </div>
+    <div class="form-item">
+        <label>Password</label>
+        <input type="password" name="password" value="<%= author.password %>">
+    </div>
 </div>
-<div>
-    <label>Password</label>
-    <input type="password" name="password" value="<%= author.password %>">
+
+<div class="form-row">
+    <div class="form-item">
+        <label>First Name</label>
+        <input type="text" name="firstName" value="<%= author.firstName %>">
+    </div>
+    <div class="form-item">
+        <label>Last Name</label>
+        <input type="text" name="lastName" value="<%= author.lastName %>">
+    </div>
 </div>
-<div>
-    <label>First Name</label>
-    <input type="text" name="firstName" value="<%= author.firstName %>">
+
+<div class="form-row">
+    <div class="form-item">
+        <label>Gender</label>
+        <select name="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+    </div>
+    <div class="form-item">
+        <label>Email</label>
+        <input type="email" name="email" value="<%= author.email %>">
+    </div>
 </div>
-<div>
-    <label>Last Name</label>
-    <input type="text" name="lastName" value="<%= author.lastName %>">
+
+<div class="form-row">
+    <div class="form-item">
+        <label>Phone</label>
+        <input type="number" name="phone" value="<%= author.phone %>">
+    </div>
+    <div class="form-item">
+        <label>Street</label>
+        <input type="text" name="street" value="<%= author.street %>">
+    </div>
 </div>
-<div>
-    <label>Gender</label>
-    <select name="gender">
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-    </select>
+
+<div class="form-row">
+    <div class="form-item">
+        <label>City</label>
+        <input type="text" name="city" value="<%= author.city %>">
+    </div>
+    <div class="form-item">
+        <label>Zipcode</label>
+        <input type="number" name="zipcode" value="<%= author.zipcode %>">
+    </div>
 </div>
-<div>
-    <label>Email</label>
-    <input type="email" name="email" value="<%= author.email %>">
+
+<div class="form-row">
+    <div class="form-item">
+        <label>State</label>
+        <input type="text" name="state" value="<%= author.state %>">
+    </div>
+    <div class="form-item">
+        <label>Country</label>
+        <input type="text" name="country" value="<%= author.country %>">
+    </div>
 </div>
-<div>
-    <label>Phone</label>
-    <input type="number" name="phone" value="<%= author.phone %>">
-</div>
-<div>
-    <label>Street</label>
-    <input type="text" name="street" value="<%= author.street %>">
-</div>
-<div>
-    <label>City</label>
-    <input type="text" name="city" value="<%= author.city %>">
-</div>
-<div>
-    <label>Zipcode</label>
-    <input type="number" name="zipcode" value="<%= author.zipcode %>">
-</div>
-<div>
-    <label>State</label>
-    <input type="text" name="state" value="<%= author.state %>">
-</div>
-<div>
-    <label>Country</label>
-    <input type="text" name="country" value="<%= author.country %>">
-</div>
-<div>
-    <label>Cover</label>
-    <input type="file" name="cover" class="filepond">
+
+<div class="form-row">
+    <div class="form-item form-item-no-grow">
+        <label>Cover</label>
+        <input type="file" name="cover" class="filepond">
+    </div>
 </div>

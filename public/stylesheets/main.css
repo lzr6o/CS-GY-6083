@@ -1,0 +1,40 @@
+@import 'shared/fonts.css';
+@import 'shared/variables.css';
+@import 'shared/header.css';
+@import 'shared/buttons.css';
+@import 'shared/form.css';
+@import 'shared/author.css';
+@import 'shared/indices.css';
+
+:root{
+    font-family: 'Berkahi Blackletter';
+    font-size: 30px;
+    font-weight: light;
+    color: var(--color-text-light);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(
+        to bottom, var(--color-background-dark), 
+        var(--color-background-light));
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 3rem;
+}
+
+.inner-container {
+    margin: 0 2rem;
+}
+
+.page-header {
+    font-family: 'AppleGaramond-Bold';
+    font-size: 1.70rem;
+    font-weight: 500;
+}

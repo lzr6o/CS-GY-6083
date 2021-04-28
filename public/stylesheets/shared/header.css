@@ -1,0 +1,69 @@
+@import 'shared/fonts.css';
+
+:root{
+    --nav-title-font-size: 2rem;
+    --nav-title-font-weight: bold;
+    --nav-link-font-weight: 300;
+    --nav-bar-select-color: hsl(50, 47%, 22%);
+    --color-hover: hsl(49, 44%, 33%);
+
+}
+
+.header-title {
+    width: 51%;
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: var(--nav-title-font-size);
+    font-weight: var(--nav-title-font-weight);
+}
+
+.header-link {
+    font-family: 'AppleGaramond-Bold';
+    font-size: 0.75rem;
+}
+
+.header-nav {
+    display: table;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.header-nav ul {
+    display: block;
+    flex-flow: column wrap;
+    justify-content:space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav li {
+    list-style: none;
+}
+
+.header-nav li a {
+    /* make nav bar horizontal*/
+    float: left;  
+    text-decoration: none;
+    display: block;
+    color: var(--color-text-light);
+    font-weight: var(--nav-link-font-weight);
+    padding: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255,0.3); 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(255, 255, 255,0.3);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/*when mouse reach turn white*/
+.header-title:hover{
+    color: var(--color-hover);
+}
+
+/*when mouse reach turn purple*/
+.header-nav li a:hover {
+    background-color: var(--color-hover);
+}
+  

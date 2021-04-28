@@ -1,12 +1,17 @@
-<div>
-    <label>Type</label>
-    <input type="text" name="type" value="<%= topic.type %>">
+<div class="form-row">
+    <div class="form-item">
+        <label>Type</label>
+        <input type="text" name="type" value="<%= topic.type %>">
+    </div>
+    <div class="form-item">
+        <label>Description</label>
+        <textarea name="description"><%= topic.description %></textarea>
+    </div>
 </div>
-<div>
-    <label>Description</label>
-    <textarea name="description"><%= topic.description %></textarea>>
-</div>
-<div>
-    <label>Cover</label>
-    <input type="file" name="cover" class="filepond">
+
+<div class="form-row">
+    <div class="form-item form-item-no-grow">
+        <label>Cover</label>
+        <input type="file" name="cover" class="filepond">
+    </div>
 </div>

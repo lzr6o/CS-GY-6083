@@ -1,28 +1,33 @@
-<div>
-    <label>Event</label>
-    <select name="event">
-        <% events.forEach(event => { %>
-            <% if (event.id===fund.event) { %>
-                <option selected label="<%= event.name %>" value="<%= event.id %>">
-                    <% } else { %>
-                <option label="<%= event.name %>" value="<%= event.id %>">
-                    <% } %>
-                        <% }) %>
-    </select>
+<div class="form-row">
+    <div class="form-item">
+        <label>Event</label>
+        <select name="event">
+            <% events.forEach(event => { %>
+                <% if (event.id===fund.event) { %>
+                    <option selected label="<%= event.name %>" value="<%= event.id %>">
+                        <% } else { %>
+                    <option label="<%= event.name %>" value="<%= event.id %>">
+                        <% } %>
+                            <% }) %>
+        </select>
+    </div>
+    <div class="form-item">
+        <label>Sponsor</label>
+        <select name="sponsor">
+            <% sponsors.forEach(sponsor => { %>
+                <% if (sponsor.id===fund.sponsor) { %>
+                    <option selected label="<%= sponsor.name %>" value="<%= sponsor.id %>">
+                        <% } else { %>
+                    <option label="<%= sponsor.name %>" value="<%= sponsor.id %>">
+                        <% } %>
+                            <% }) %>
+        </select>
+    </div>
 </div>
-<div>
-    <label>Sponsor</label>
-    <select name="sponsor">
-        <% sponsors.forEach(sponsor => { %>
-            <% if (sponsor.id===fund.sponsor) { %>
-                <option selected label="<%= sponsor.name %>" value="<%= sponsor.id %>">
-                    <% } else { %>
-                <option label="<%= sponsor.name %>" value="<%= sponsor.id %>">
-                    <% } %>
-                        <% }) %>
-    </select>
-</div>
-<div>
-    <label>Amount</label>
-    <input type="float" name="amount" min="0.0" step="0.01" value="<%= fund.amount %>">
+
+<div class="form-row">
+    <div class="form-item">
+        <label>Amount</label>
+        <input type="float" name="amount" min="0.0" step="0.01" value="<%= fund.amount %>">
+    </div>
 </div>

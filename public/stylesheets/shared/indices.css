@@ -1,0 +1,59 @@
+:root {
+    --index-font-family: 'AppleGaramond-Bold';
+}
+
+.index-row {
+    display: flex;
+    /*justify-content: space-evenly;*/
+}
+  
+.index-item-left{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0;
+    align-items: center; /*text in center of the box*/
+
+    /*box code*/
+    margin-left: 3rem;
+    padding: 3rem;
+    width: 10rem;
+    border-top: 1px solid rgba(255, 255, 255,0.3); 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(255, 255, 255,0.3);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.index-item-right{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0;
+    align-items: center;/*text in center of the box*/
+
+    /*box code*/
+    margin-right: 3rem;
+    padding: 3rem;
+    width: 10rem;
+    border-top: 1px solid rgba(255, 255, 255,0.3); 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(255, 255, 255,0.3);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+.index-item-left:hover {
+    background-color:rgb(172, 153, 114);
+    
+}
+.index-item-right:hover {
+    background-color:rgb(172, 153, 114);
+}
+
+
+.index-text {
+    text-decoration: none;
+    color: var(--color-text-light);
+    font-weight: var(--nav-title-font-weight);
+    font-family: var(--index-font-family);
+}

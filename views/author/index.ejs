@@ -1,15 +1,41 @@
 <h1>Dear Author</h1>
 <h2>
     <%= author.fullName %>
+    <div><a href='author'>Logout</a></div>
 </h2>
-<div>
-    <a href="/author/<%= author.id %>">Profile</a>
-    <a href='/books'>Books</a>
-    <a href='/books/new'>Add Book</a>
-    <a href='/topics'>Topics</a>
-    <a href='/events'>Events</a>
-    <a href='/invitations/new'>Add Invitation</a>
-    <a href='/sponsors/new'>Add Sponsor</a>
-    <a href='/funds/new'>Add Fund</a>
+
+<div class = 'index-row'>
+    <div class = 'index-item-left'>
+      <a class = 'index-text' href="/author/<%= author.id %>">Profile</a>
+    </div>
+    <div class = 'index-item-right'>
+      <a class = 'index-text' href='/books'>Books</a>
+    </div>
 </div>
-<div><a href='author'>Logout</a></div>
+
+<div class = 'index-row'>
+    <div class = 'index-item-left'>
+        <a class = 'index-text' href='/books/new'>Add Book</a>
+    </div>
+    <div class = 'index-item-right'>
+        <a class = 'index-text' href='/topics'>Topics</a>
+    </div>
+</div>
+
+<div class = 'index-row'>
+    <div class = 'index-item-left'>
+        <a class = 'index-text' href='/events'>Events</a>
+    </div>
+    <div class = 'index-item-right'>
+        <a class = 'index-text' href='/invitations/new'>Add Invitation</a>
+    </div>
+</div>
+
+<div class = 'index-row'>
+    <div class = 'index-item-left'>
+        <a class = 'index-text' href='/sponsors/new'>Add Sponsor</a>
+    </div>
+    <div class = 'index-item-right'>
+        <a class = 'index-text' href='/funds/new'>Add Fund</a>
+    </div>
+</div>

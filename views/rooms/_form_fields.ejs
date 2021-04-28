@@ -1,12 +1,17 @@
-<div>
-    <label>Number</label>
-    <input type="number" name="number" value="<%= room.number %>">
+<div class="form-row">
+    <div class="form-item">
+        <label>Number</label>
+        <input type="number" name="number" value="<%= room.number %>">
+    </div>
+    <div class="form-item">
+        <label>Capacity</label>
+        <input type="number" name="capacity" value="<%= room.capacity %>">
+    </div>
 </div>
-<div>
-    <label>Capacity</label>
-    <input type="number" name="capacity" value="<%= room.capacity %>">
-</div>
-<div>
-    <label>Cover</label>
-    <input type="file" name="cover" class="filepond">
+
+<div class="form-row">
+    <div class="form-item form-item-no-grow">
+        <label>Cover</label>
+        <input type="file" name="cover" class="filepond">
+    </div>
 </div>
