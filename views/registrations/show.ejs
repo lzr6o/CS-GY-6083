@@ -8,5 +8,9 @@
 <div>
     Event: <%= registration.event.name %>
 </div>
-<a href="/customers/<%= registration.customer.id %>">View Customer</a>
-<a href="/events/<%= registration.event.id %>">View Event</a>
+<div class="form-row form-row-end btn-row">
+    <a class="btn btn-primary" 
+    href="/customers/<%= registration.customer.id %>">View Customer</a>
+    <a class="btn btn-primary" 
+    href="/events/<%= registration.event.id %>">View Event</a>
+</div>

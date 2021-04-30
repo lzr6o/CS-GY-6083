@@ -1,6 +1,9 @@
 <h2>Edit Payment</h2>
 <form action="/payments/<%= payment.id %>?_method=PUT" method="POST">
     <%- include('_form_fields') %>
-    <a href="/payments">Cancel</a>
-    <button type="submit">Update</button>
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-primary" href="/payments">Cancel</a>
+        <button class="btn btn-danger"
+        type="submit">Update</button>
+    </div>
 </form>

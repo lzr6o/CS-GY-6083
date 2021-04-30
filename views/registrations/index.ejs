@@ -1,17 +1,26 @@
 <h2>Registration List</h2>
 <form action="/registrations" method="GET">
-    <div>
-        <label>ID</label>
-        <input type="text" name="id" value="<%= searchOptions.id %>">
+    <div class="form-row">
+        <div class="form-item">
+            <label>ID</label>
+            <input type="text" name="id" value="<%= searchOptions.id %>">
+        </div>
     </div>
-    <button type="submit">Search</button>
+    <div class="form-row form-row-end btn-row">
+        <button class = "btn btn-primary"
+        type="submit">Search</button>
+    </div>
 </form>
 <br>
 <% registrations.forEach(registration => { %>
     <div>
         <%= registration.id %>
     </div>
-    <a href="/registrations/<%= registration.id %>">View</a>
-    <a href="/registrations/<%= registration.id %>/edit">Edit</a>
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-primary" 
+        href="/registrations/<%= registration.id %>">View</a>
+        <a class="btn btn-primary" 
+        href="/registrations/<%= registration.id %>/edit">Edit</a>
+    </div>
     <%- include('../partials/deleteForm', { url: `/registrations/${registration.id}` }) %>
         <% }) %>

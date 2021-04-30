@@ -23,5 +23,9 @@
 <div>
     Card Number: <%= payment.cardNumber %>
 </div>
-<a href="/customers/<%= payment.customer.id %>">View Customer</a>
-<a href="/invoices/<%= payment.invoice.id %>">View Invoice</a>
+
+
+<div class="form-row form-row-end btn-row">
+    <a class="btn btn-primary" href="/customers/<%= payment.customer.id %>">View Customer</a>
+    <a class="btn btn-primary" href="/invoices/<%= payment.invoice.id %>">View Invoice</a>
+</div>

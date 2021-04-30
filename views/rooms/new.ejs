@@ -1,6 +1,9 @@
 <h2>New Room</h2>
 <form action="/rooms" method="POST">
     <%- include('_form_fields') %>
-    <a href="/rooms">Cancel</a>
-    <button type="submit">Create</button>
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-primary" href="/rooms">Cancel</a>
+        <button class="btn btn-danger" 
+        type="submit">Create</button>
+    </div>
 </form>

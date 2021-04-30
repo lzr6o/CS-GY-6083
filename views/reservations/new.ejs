@@ -1,6 +1,9 @@
 <h2>New Reservation</h2>
 <form action="/reservations" method="POST">
     <%- include('_form_fields') %>
-    <a href="/reservations">Cancel</a>
-    <button type="submit">Create</button>
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-primary" href="/reservations">Cancel</a>
+        <button class="btn btn-danger" 
+        type="submit">Create</button>
+    </div>
 </form>

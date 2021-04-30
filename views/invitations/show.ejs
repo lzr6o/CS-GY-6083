@@ -8,5 +8,9 @@
 <div>
     Event: <%= invitation.event.name %>
 </div>
-<a href="/authors/<%= invitation.author.id %>">View Author</a>
-<a href="/events/<%= invitation.event.id %>">View Event</a>
+<div class="form-row form-row-end btn-row">
+    <a class="btn btn-primary" 
+    href="/authors/<%= invitation.author.id %>">View Author</a>
+    <a class="btn btn-primary" 
+    href="/events/<%= invitation.event.id %>">View Event</a>
+</div>

@@ -24,5 +24,10 @@
 <div>
     Description: <%= book.description %>
 </div>
-<a href="/authors/<%= book.author.id %>">View Author</a>
-<a href="/topics/<%= book.topic.id %>">View Topic</a>
+
+<div class="form-row btn-row">
+    <a class="btn btn-primary" 
+    href="/authors/<%= book.author.id %>">View Author</a>
+    <a class="btn btn-primary" 
+    href="/topics/<%= book.topic.id %>">View Topic</a>
+</div>

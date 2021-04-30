@@ -1,6 +1,9 @@
 <h2>Edit Reservation</h2>
 <form action="/reservations/<%= reservation.id %>?_method=PUT" method="POST">
     <%- include('_form_fields') %>
-    <a href="/reservations">Cancel</a>
-    <button type="submit">Update</button>
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-primary" href="/reservations">Cancel</a>
+        <button class="btn btn-danger"
+        type="submit">Update</button>
+    </div>
 </form>

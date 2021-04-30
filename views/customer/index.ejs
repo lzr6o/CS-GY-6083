@@ -68,8 +68,9 @@
                     <h2>Rental</h2>
                     <% rentals.forEach(rental=> { %>
                         <div>
-                            ID: <%= rental.id %> <a href="/rentals/<%= rental.id %>">View</a>
-                        </div>
+                            ID: <%= rental.id %> 
+                            <a href="/rentals/<%= rental.id %>">View</a>
+                       </div>
                         <br>
                         <% }) %>
                             <% } %>
@@ -78,8 +79,8 @@
                                     <h2>Registration</h2>
                                     <% registrations.forEach(registration=> { %>
                                         <div>
-                                            ID: <%= registration.id %> <a
-                                                    href="/registrations/<%= registration.id %>">View</a>
+                                            ID: <%= registration.id %> 
+                                            <a href="/registrations/<%= registration.id %>">View</a>
                                         </div>
                                         <br>
                                         <% }) %>

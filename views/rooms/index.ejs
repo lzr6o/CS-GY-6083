@@ -1,10 +1,15 @@
 <h2>Search Room</h2>
 <form action="/rooms" method="GET">
-    <div>
-        <label>Number</label>
-        <input type="number" name="number" value="<%= searchOptions.number %>">
+    <div class="form-row">
+        <div class="form-item">
+            <label>Number</label>
+            <input type="number" name="number" value="<%= searchOptions.number %>">
+        </div>
     </div>
-    <button type="submit">Search</button>
+    <div class="form-row form-row-end btn-row">
+        <button class = "btn btn-primary"
+        type="submit">Search</button>
+    </div>
 </form>
 <br>
 <div>

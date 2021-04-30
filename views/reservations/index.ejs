@@ -1,18 +1,27 @@
 <h2>Search Reservation</h2>
 <form action="/reservations" method="GET">
-    <div>
-        <label>Timeslot</label>
-        <input type="text" name="timeslot" value="<%= searchOptions.timeslot %>">
+    <div class="form-row">
+        <div class="form-item">
+            <label>Timeslot</label>
+            <input type="text" name="timeslot" value="<%= searchOptions.timeslot %>">
+        </div>
     </div>
-    <div>
-        <label>Reserve After</label>
-        <input type="date" name="reserveAfter" value="<%= searchOptions.reserveAfter %>">
+
+    <div class="form-row">
+        <div class="form-item">
+            <label>Reserve After</label>
+            <input type="date" name="reserveAfter" value="<%= searchOptions.reserveAfter %>">
+        </div>
+        <div class="form-item">
+            <label>Reserve Before</label>
+            <input type="date" name="reserveBefore" value="<%= searchOptions.reserveBefore %>">
+        </div>
     </div>
-    <div>
-        <label>Reserve Before</label>
-        <input type="date" name="reserveBefore" value="<%= searchOptions.reserveBefore %>">
+
+    <div class="form-row form-row-end btn-row">
+        <button class = "btn btn-primary"
+        type="submit">Search</button>
     </div>
-    <button type="submit">Search</button>
 </form>
 <br>
 <% reservations.forEach(reservation => { %>
@@ -20,7 +29,11 @@
         <%= reservation.timeslot %>
         <%= reservation.date.toDateString() %>
     </div>
-    <a href="/reservations/<%= reservation.id %>">View</a>
-    <a href="/reservations/<%= reservation.id %>/edit">Edit</a>
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-primary" 
+        href="/reservations/<%= reservation.id %>">View</a>
+        <a class="btn btn-primary" 
+        href="/reservations/<%= reservation.id %>/edit">Edit</a>
+    </div>
     <%- include('../partials/deleteForm', { url: `/reservations/${reservation.id}` }) %>
         <% }) %>

@@ -11,5 +11,10 @@
 <div>
     Amount: <%= fund.amount %>
 </div>
-<a href="/events/<%= fund.event.id %>">View Event</a>
-<a href="/sponsors/<%= fund.sponsor.id %>">View Sponsor</a>
+
+<div class="form-row form-row-end btn-row">
+    <a class="btn btn-primary" 
+    href="/events/<%= fund.event.id %>">View Event</a>
+    <a class="btn btn-primary" 
+    href="/sponsors/<%= fund.sponsor.id %>">View Sponsor</a>
+</div>

@@ -1,6 +1,9 @@
 <h2>Edit Fund</h2>
 <form action="/funds/<%= fund.id %>?_method=PUT" method="POST">
     <%- include('_form_fields') %>
-    <a href="/funds">Cancel</a>
-    <button type="submit">Update</button>
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-primary" href="/funds">Cancel</a>
+        <button class="btn btn-danger" 
+        type="submit">Update</button>
+    </div>
 </form>

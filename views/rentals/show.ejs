@@ -20,5 +20,9 @@
 <div>
     Status: <%= rental.status %>
 </div>
-<a href="/customers/<%= rental.customer.id %>">View Customer</a>
-<a href="/copies/<%= rental.copy.id %>">View Copy</a>
+<div class="form-row form-row-end btn-row">
+    <a class="btn btn-primary" 
+    href="/customers/<%= rental.customer.id %>">View Customer</a>
+    <a class="btn btn-primary" 
+    href="/copies/<%= rental.copy.id %>">View Copy</a>
+</div>

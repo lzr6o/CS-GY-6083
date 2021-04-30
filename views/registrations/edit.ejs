@@ -1,6 +1,10 @@
 <h2>Edit Registration</h2>
 <form action="/registrations/<%= registration.id %>?_method=PUT" method="POST">
     <%- include('_form_fields') %>
-    <a href="/registrations">Cancel</a>
-    <button type="submit">Update</button>
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-primary" 
+        href="/registrations">Cancel</a>
+        <button class="btn btn-danger"
+        type="submit">Update</button>
+    </div>
 </form>

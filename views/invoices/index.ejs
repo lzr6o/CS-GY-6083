@@ -1,22 +1,31 @@
 <h2>Search Invoice</h2>
 <form action="/invoices" method="GET">
-    <div>
-        <label>Amount Above</label>
-        <input type="number" name="amountAbove" min="0.0" step="0.01" value="<%= searchOptions.amountAbove %>">
+    <div class="form-row">
+        <div class="form-item">
+            <label>Amount Above</label>
+            <input type="number" name="amountAbove" min="0.0" step="0.01" value="<%= searchOptions.amountAbove %>">
+        </div>
+        <div class="form-item">
+            <label>Amount Under</label>
+            <input type="number" name="amountUnder" min="0.0" step="0.01" value="<%= searchOptions.amountUnder %>">
+        </div>
     </div>
-    <div>
-        <label>Amount Under</label>
-        <input type="number" name="amountUnder" min="0.0" step="0.01" value="<%= searchOptions.amountUnder %>">
+
+    <div class="form-row">
+        <div class="form-item">
+            <label>Generate After</label>
+            <input type="date" name="generateAfter" value="<%= searchOptions.generateAfter %>">
+        </div>
+        <div class="form-item">
+            <label>Generate Before</label>
+            <input type="date" name="generateBefore" value="<%= searchOptions.generateBefore %>">
+        </div>
     </div>
-    <div>
-        <label>Generate After</label>
-        <input type="date" name="generateAfter" value="<%= searchOptions.generateAfter %>">
+
+    <div class="form-row form-row-end btn-row">
+        <button class = "btn btn-primary"
+        type="submit">Search</button>
     </div>
-    <div>
-        <label>Generate Before</label>
-        <input type="date" name="generateBefore" value="<%= searchOptions.generateBefore %>">
-    </div>
-    <button type="submit">Search</button>
 </form>
 <br>
 <% invoices.forEach(invoice => { %>
@@ -24,7 +33,14 @@
         <%= invoice.amount %>
         <%= invoice.dateGenerated.toDateString() %>
     </div>
-    <a href="/invoices/<%= invoice.id %>">View</a>
-    <a href="/invoices/<%= invoice.id %>/edit">Edit</a>
-    <%- include('../partials/deleteForm', { url: `/invoices/${invoice.id}` }) %>
+    
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-primary"  
+        href="/invoices/<%= invoice.id %>">View</a>
+    
+        <a class="btn btn-primary"
+        href="/invoices/<%= invoice.id %>/edit">Edit</a>
+    </div>
+        <%- include('../partials/deleteForm', { url: `/invoices/${invoice.id}` }) %>
         <% }) %>
+    

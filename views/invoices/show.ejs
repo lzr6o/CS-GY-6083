@@ -8,4 +8,7 @@
 <div>
     Amount: <%= invoice.amount %>
 </div>
-<a href="/rentals/<%= invoice.rental.id %>">View Rental</a>
+
+<div class="form-row form-row-end btn-row">
+    <a class="btn btn-primary" href="/rentals/<%= invoice.rental.id %>">View Rental</a>
+</div>

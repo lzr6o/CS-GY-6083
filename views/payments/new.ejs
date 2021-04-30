@@ -1,6 +1,9 @@
 <h2>New Payment</h2>
 <form action="/payments" method="POST">
     <%- include('_form_fields') %>
-    <a href="/payments">Cancel</a>
-    <button type="submit">Create</button>
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-primary" href="/payments">Cancel</a>
+        <button class="btn btn-danger" 
+        type="submit">Create</button>
+    </div>
 </form>

@@ -1,6 +1,9 @@
 <h1>New Author Registration</h1>
 <form action="/author/register" method="POST">
     <%- include('_form_fields') %> 
-    <a href="/author">Cancel</a>
-    <button type="submit">Register</button>
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-primary" href="/author">Cancel</a>
+        <button class="btn btn-danger"
+        type="submit">Register</button>
+    </div>
 </form>

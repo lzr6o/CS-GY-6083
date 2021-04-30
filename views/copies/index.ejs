@@ -1,10 +1,17 @@
 <h2>Search Copy</h2>
 <form action="/copies" method="GET">
-    <div>
-        <label>Status</label>
-        <input type="text" name="status" value="<%= searchOptions.status %>">
+    <div class="form-row">
+        <div class="form-item">
+            <label>Status</label>
+            <input type="text" name="status" value="<%= searchOptions.status %>">
+        </div>
     </div>
-    <button type="submit">Search</button>
+
+    <div class="form-row form-row-end btn-row">
+        <button class = "btn btn-primary" 
+        type="submit">Search</button>
+    </div>
+    
 </form>
 <br>
 <% copies.forEach(copy => { %>
@@ -14,7 +21,13 @@
     <div>
         <%= copy.status %>
     </div>
-    <a href="/copies/<%= copy.id %>">View</a>
-    <a href="/copies/<%= copy.id %>/edit">Edit</a>
-    <%- include('../partials/deleteForm', { url: `/copies/${copy.id}` }) %>
+    
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-primary" 
+        href="/copies/<%= copy.id %>">View</a>
+        <a class="btn btn-primary" 
+        href="/copies/<%= copy.id %>/edit">Edit</a> 
+    </div>
+        <%- include('../partials/deleteForm', { url: `/copies/${copy.id}` }) %>
         <% }) %>
+    

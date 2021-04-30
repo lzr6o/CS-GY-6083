@@ -1,6 +1,9 @@
 <h2>New Customer</h2>
 <form action="/customers" method="POST">
     <%- include('_form_fields') %>
-    <a href="/customers">Cancel</a>
-    <button type="submit">Create</button>
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-primary" href="/customers">Cancel</a>
+        <button class="btn btn-danger" 
+        type="submit">Create</button>
+    </div>
 </form>

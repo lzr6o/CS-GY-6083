@@ -1,6 +1,9 @@
 <h2>Edit Topic</h2>
 <form action="/topics/<%= topic.id %>?_method=PUT" method="POST">
     <%- include('_form_fields') %>
-    <a href="/topics">Cancel</a>
-    <button type="submit">Update</button>
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-primary" href="/topics">Cancel</a>
+        <button class="btn btn-danger"
+        type="submit">Update</button>
+    </div>
 </form>

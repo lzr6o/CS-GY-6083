@@ -44,5 +44,8 @@
 <div>
     Identification Number: <%= customer.identificationNumber %>
 </div>
-<a href="/customer/<%= customer.id %>/edit">Edit</a>
+<div class="form-row form-row-end btn-row">
+    <a class="btn btn-primary" 
+    href="/customer/<%= customer.id %>/edit">Edit</a>
+</div>
 <%- include('../partials/deleteForm', { url: `/customer/${customer.id}` }) %>

@@ -1,10 +1,16 @@
 <h2>Invitation List</h2>
 <form action="/invitations" method="GET">
-    <div>
-        <label>ID</label>
-        <input type="text" name="id" value="<%= searchOptions.id %>">
+    <div class="form-row">
+        <div class="form-item">
+            <label>ID</label>
+            <input type="text" name="id" value="<%= searchOptions.id %>">
+        </div>
     </div>
-    <button type="submit">Search</button>
+
+    <div class="form-row form-row-end btn-row">
+        <button class = "btn btn-primary"
+        type="submit">Search</button>
+    </div>
 </form>
 <br>
 <% invitations.forEach(invitation => { %>
