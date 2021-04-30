@@ -3,6 +3,7 @@ const router = express.Router()
 const Customer = require('../models/customer')
 const Payment = require('../models/payment')
 const Rental = require('../models/rental')
+const Invoice = require('../models/invoice')
 const Registration = require('../models/registration')
 const Reservation = require('../models/reservation')
 const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif']
@@ -19,6 +20,7 @@ router.post('/login', async (req, res) => {
     const customer = await Customer.findOne({ username: username, password: password })
     const payments = await Payment.find({ customer: customer })
     const rentals = await Rental.find({ customer: customer })
+    const invoices = await Invoice.find({ customer: customer })
     const registrations = await Registration.find({ customer : customer })
     const reservations = await Reservation.find({ customer : customer })
     if (!customer) {
@@ -28,6 +30,7 @@ router.post('/login', async (req, res) => {
             customer: customer,
             payments: payments,
             rentals: rentals,
+            invoices: invoices,
             registrations: registrations,
             reservations: reservations
         })
@@ -123,22 +126,6 @@ router.put('/:id', async (req, res) => {
                 customer: customer,
                 errorMessage: 'Error Updating Customer'
             })
-        }
-    }
-})
-
-// delete customer route
-router.delete('/:id', async (req, res) => {
-    let customer
-    try {
-        customer = await Customer.findById(req.params.id)
-        await customer.remove()
-        res.redirect('/customer')
-    } catch {
-        if (customer == null) {
-            res.redirect('/')
-        } else {
-            res.redirect(`/customer/${customer.id}`)
         }
     }
 })

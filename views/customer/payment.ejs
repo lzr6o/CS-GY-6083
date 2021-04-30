@@ -1,0 +1,69 @@
+<h2>New Payment</h2>
+<form action="/customer/payment" method="POST">
+    <div class="form-row">
+        <div class="form-item">
+            <label>Customer</label>
+            <select name="customer">
+                <% customers.forEach(customer=> { %>
+                    <% if (customer.id===payment.customer) { %>
+                        <option selected label="<%= customer.fullName %>" value="<%= customer.id %>">
+                            <% } else { %>
+                        <option label="<%= customer.fullName %>" value="<%= customer.id %>">
+                            <% } %>
+                                <% }) %>
+            </select>
+        </div>
+        <div class="form-item">
+            <label>Invoice</label>
+            <select name="invoice">
+                <% invoices.forEach(invoice=> { %>
+                    <% if (invoice.id===payment.invoice) { %>
+                        <option selected label="<%= invoice.id %>" value="<%= invoice.id %>">
+                            <% } else { %>
+                        <option label="<%= invoice.id %>" value="<%= invoice.id %>">
+                            <% } %>
+                                <% }) %>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-item">
+            <label>Pay Date</label>
+            <input type="date" name="payDate" value="<%= payment.payDate == null ? '' :
+        payment.payDate.toISOString().split('T')[0] %>">
+        </div>
+        <div class="form-item">
+            <label>Method</label>
+            <select name="method">
+                <option value="Cash">Cash</option>
+                <option value="Credit">Credit</option>
+                <option value="Debit">Debit</option>
+                <option value="Apple Pay">Apple Pay</option>
+                <option value="Paypal">Paypal</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-item">
+            <label>Amount</label>
+            <input type="float" name="amount" min="0.0" step="0.01" value="<%= payment.amount %>">
+        </div>
+        <div class="form-item">
+            <label>Card Holder Name</label>
+            <input type="text" name="cardHolderName" value="<%= payment.cardHolderName %>">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-item">
+            <label>Card Number</label>
+            <input type="number" name="cardNumber" value="<%= payment.cardNumber %>">
+        </div>
+    </div>
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-primary" href="customer">Cancel</a>
+        <button class="btn btn-danger" type="submit">Create</button>
+    </div>
+</form>

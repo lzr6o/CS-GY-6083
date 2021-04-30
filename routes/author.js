@@ -1,10 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const Customer = require('../models/customer')
 const Author = require('../models/author')
-const Event = require('../models/event')
 const Book = require('../models/book')
-const Room = require('../models/room')
 const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif']
 
 // author login route
@@ -63,7 +60,11 @@ router.post('/register', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const author = await Author.findById(req.params.id)
-        res.render('author/show', { author: author })
+        const books = await Book.find({ author: author.id }).limit(6).exec()
+        res.render('author/show', {
+            author: author,
+            booksByAuthor: books
+        })
     } catch {
         res.redirect('/')
     }

@@ -1,98 +1,109 @@
 <h1>Dear Customer</h1>
+
 <h2>
     <%= customer.fullName %>
-    <div><a href='customer'>Logout</a></div>
+        <div><a href='/'>Logout</a></div>
 </h2>
-<div class = 'index-row'>
-    <div class = 'index-item-left'>
-      <a class = 'index-text' href="/customer/<%= customer.id %>">Profile</a>
+
+<div class='index-row'>
+    <div class='index-item-left'>
+        <a class='index-text' href="/customer/<%= customer.id %>">Profile</a>
     </div>
-    <div class = 'index-item-right'>
-      <a class = 'index-text' href='/books'>Books</a>
+    <div class='index-item-right'>
+        <a class='index-text' href='/books'>Books</a>
     </div>
 </div>
 
-<div class = 'index-row'>
-    <div class = 'index-item-left'>
-        <a class = 'index-text' href='/payments/new'>Add Payment</a>
+<div class='index-row'>
+    <div class='index-item-left'>
+        <a class='index-text' href='/payments/new'>Add Payment</a>
     </div>
-    <div class = 'index-item-right'>
-        <a class = 'index-text' href='/rentals/new'>Add Rental</a>
-    </div>
-</div>
-
-<div class = 'index-row'>
-    <div class = 'index-item-left'>
-        <a class = 'index-text' href='/topics'>Topics</a>
-    </div>
-    <div class = 'index-item-right'>
-        <a class = 'index-text' href='/events'>Events</a>
+    <div class='index-item-right'>
+        <a class='index-text' href='/rentals/new'>Add Rental</a>
     </div>
 </div>
 
-<div class = 'index-row'>
-    <div class = 'index-item-left'>
-        <a class = 'index-text' href='/rooms'>Rooms</a>
+<div class='index-row'>
+    <div class='index-item-left'>
+        <a class='index-text' href='/topics'>Topics</a>
     </div>
-    <div class = 'index-item-right'>
-        <a class = 'index-text' href='/reservations/new'>Add Reservation</a>
-    </div>
-</div>
-
-<div class = 'index-row'>
-    <div class = 'index-item-left'>
-        <a class = 'index-text' href='/registrations/new'>Add Registration</a>
-    </div>
-    <div class = 'index-item-right'>
-        <a class = 'index-text' href='/sponsors/new'>Add Sponsor</a>
+    <div class='index-item-right'>
+        <a class='index-text' href='/events'>Events</a>
     </div>
 </div>
 
-<div class = 'index-row'>
-    <div class = 'index-item-left index-item-right'>
-        <a class = 'index-text' href='/funds/new'>Add Fund</a>
+<div class='index-row'>
+    <div class='index-item-left'>
+        <a class='index-text' href='/rooms'>Rooms</a>
+    </div>
+    <div class='index-item-right'>
+        <a class='index-text' href='/reservations/new'>Add Reservation</a>
     </div>
 </div>
 
-<% if (payments.length> 0) { %>
-    <h2>Payment</h2>
-    <% payments.forEach(payment=> { %>
+<div class='index-row'>
+    <div class='index-item-left'>
+        <a class='index-text' href='/registrations/new'>Add Registration</a>
+    </div>
+    <div class='index-item-right'>
+        <a class='index-text' href='/sponsors/new'>Add Sponsor</a>
+    </div>
+</div>
+
+<div class='index-row'>
+    <div class='index-item-left index-item-right'>
+        <a class='index-text' href='/funds/new'>Add Fund</a>
+    </div>
+</div>
+<% if (invoices.length> 0) { %>
+    <h2>Invoice</h2>
+    <% invoices.forEach(invoice=> { %>
         <div>
-            ID: <%= payment.id %> <a href="/payments/<%= payment.id %>">View</a>
+            ID: <%= invoice.id %> <a href="/invoices/<%= invoice.id %>">View</a>
         </div>
         <br>
         <% }) %>
             <% } %>
 
-                <% if (rentals.length> 0) { %>
-                    <h2>Rental</h2>
-                    <% rentals.forEach(rental=> { %>
+                <% if (payments.length> 0) { %>
+                    <h2>Payment</h2>
+                    <% payments.forEach(payment=> { %>
                         <div>
-                            ID: <%= rental.id %> 
-                            <a href="/rentals/<%= rental.id %>">View</a>
-                       </div>
+                            ID: <%= payment.id %> <a href="/payments/<%= payment.id %>">View</a>
+                        </div>
                         <br>
                         <% }) %>
                             <% } %>
 
-                                <% if (registrations.length> 0) { %>
-                                    <h2>Registration</h2>
-                                    <% registrations.forEach(registration=> { %>
+                                <% if (rentals.length> 0) { %>
+                                    <h2>Rental</h2>
+                                    <% rentals.forEach(rental=> { %>
                                         <div>
-                                            ID: <%= registration.id %> 
-                                            <a href="/registrations/<%= registration.id %>">View</a>
+                                            ID: <%= rental.id %>
+                                                <a href="/rentals/<%= rental.id %>">View</a>
                                         </div>
                                         <br>
                                         <% }) %>
                                             <% } %>
 
-                                                <% if (reservations.length> 0) { %>
-                                                    <h2>Reservation</h2>
-                                                    <% reservations.forEach(reservation=> { %>
+                                                <% if (registrations.length> 0) { %>
+                                                    <h2>Registration</h2>
+                                                    <% registrations.forEach(registration=> { %>
                                                         <div>
-                                                            ID: <%= reservation.id %> <a
-                                                                    href="/reservations/<%= reservation.id %>">View</a>
+                                                            ID: <%= registration.id %>
+                                                                <a href="/registrations/<%= registration.id %>">View</a>
                                                         </div>
                                                         <br>
                                                         <% }) %>
                                                             <% } %>
+
+                                                                <% if (reservations.length> 0) { %>
+                                                                    <h2>Reservation</h2>
+                                                                    <% reservations.forEach(reservation=> { %>
+                                                                        <div>
+                                                                            ID: <%= reservation.id %> <a
+                                                                                    href="/reservations/<%= reservation.id %>">View</a>
+                                                                        </div>
+                                                                        <br>
+                                                                        <% }) %>
+                                                                            <% } %>

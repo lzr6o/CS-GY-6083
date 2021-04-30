@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Invoice = require('../models/invoice')
 const Rental = require('../models/rental')
+const Customer = require('../models/customer')
 
 // all invoices route
 router.get('/', async (req, res) => {
@@ -39,7 +40,8 @@ router.post('/', async (req, res) => {
     const invoice = new Invoice({
         dateGenerated: new Date(req.body.dateGenerated),
         amount: req.body.amount,
-        rental: req.body.rental
+        rental: req.body.rental,
+        customer: req.body.customer
     })
     try {
         const newInvoice = await invoice.save()
@@ -54,6 +56,7 @@ router.get('/:id', async (req, res) => {
     try {
         const invoice = await Invoice.findById(req.params.id)
             .populate('rental')
+            .populate('customer')
             .exec()
         res.render('invoices/show', { invoice : invoice })
     } catch {
@@ -79,6 +82,7 @@ router.put('/:id', async (req, res) => {
         invoice.dateGenerated = new Date(req.body.dateGenerated)
         invoice.amount = req.body.amount
         invoice.rental = req.body.rental
+        invoice.customer = req.body.customer
         await invoice.save()
         res.redirect(`/invoices/${invoice.id}`)
     } catch {
@@ -120,8 +124,10 @@ async function renderEditPage(res, invoice, hasError = false) {
 async function renderFormPage(res, invoice, form, hasError = false) {
     try {
         const rentals = await Rental.find({})
+        const customers = await Customer.find({})
         const params = {
             rentals: rentals,
+            customers: customers,
             invoice: invoice
         }
         if (hasError) {
