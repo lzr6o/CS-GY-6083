@@ -5,8 +5,8 @@
     --color-btn-primary-text-dark: hsl(var(--color-base-hue), 100%, 10%);
     --color-btn-border: black;
 
-    --color-btn-danger-text: black;
-    --color-btn-danger-text-dark: black;
+    --color-btn-danger-text: rgb(41, 41, 41);
+    --color-btn-danger-text-dark: rgb(41, 41, 41);
     --color-btn-danger-background: hsl(var(--color-danger-hue), 100%, 83%);
     --color-btn-danger-background-dark: hsl(var(--color-danger-hue), 100%, 73%);
 }
@@ -16,7 +16,7 @@
     border-radius: .5rem;
     padding: .5rem 1rem;
     font-size: .75rem;
-    font-family: 'AppleGaramond-Bold';
+    font-family: 'PD-EB';
     cursor: pointer;
     text-decoration: none;
     text-align:center;

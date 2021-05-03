@@ -1,4 +1,4 @@
-<h2>Search Payment</h2>
+<h2 class="page-header">Search Payment</h2>
 <form action="/payments" method="GET">
     <div class="form-row">
         <div class="form-item">
@@ -23,7 +23,7 @@
             <label>Amount Under</label>
             <input type="number" name="amountUnder" min="0.0" step="0.01" value="<%= searchOptions.amountUnder %>">
         </div>
-    </div> 
+    </div>
 
     <div class="form-row">
         <div class="form-item">
@@ -37,22 +37,26 @@
     </div>
 
     <div class="form-row form-row-end btn-row">
-        <button class = "btn btn-primary"
-        type="submit">Search</button>
+        <button class="btn btn-primary" type="submit">Search</button>
     </div>
 </form>
 <br>
-<% payments.forEach(payment => { %>
-    <div>
-        <%= payment.method %>
-            <%= payment.amount %>
-                <%= payment.payDate.toDateString() %>
+<% payments.forEach(payment=> { %>
+    <div class="author-row">
+        <div class="author-name">
+            <%= payment.method %>
+        </div>
+        <div class="author-name">
+            <%= '$' + payment.amount %>
+        </div>
+        <div class="author-name">
+            <%= payment.payDate.toDateString() %>
+        </div>
     </div>
     <div class="form-row form-row-end btn-row">
-        <a class="btn btn-primary" 
-        href="/payments/<%= payment.id %>">View</a>
-        <a class="btn btn-primary" 
-        href="/payments/<%= payment.id %>/edit">Edit</a>
-    </div>
+        <a class="btn btn-primary" href="/payments/<%= payment.id %>">View</a>
+        <a class="btn btn-primary" href="/payments/<%= payment.id %>/edit">Edit</a>
+    
     <%- include('../partials/deleteForm', { url: `/payments/${payment.id}` }) %>
-        <% }) %>
+    </div>
+    <% }) %>

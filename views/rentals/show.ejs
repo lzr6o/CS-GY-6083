@@ -1,28 +1,44 @@
-<h1>Rental</h1>
-<div>
-    ID: <%= rental.id %>
-</div>
-<div>
-    Borrower: <%= rental.customer.fullName %>
-</div>
-<div>
-    Copy: <%= rental.copy.id %>
-</div>
-<div>
-    Borrow Date: <%= rental.borrowDate.toDateString() %>
-</div>
-<div>
-    Expected Return Date: <%= rental.expectedReturnDate.toDateString() %>
-</div>
-<div>
-    Actual Return Date: <%= rental.actualReturnDate.toDateString() %>
-</div>
-<div>
-    Status: <%= rental.status %>
-</div>
-<div class="form-row form-row-end btn-row">
-    <a class="btn btn-primary" 
-    href="/customers/<%= rental.customer.id %>">View Customer</a>
-    <a class="btn btn-primary" 
-    href="/copies/<%= rental.copy.id %>">View Copy</a>
+<h1 class="page-header">Rental</h1>
+
+<div class="book-details">
+    <div>
+        <div class="book-details-btn-grid">
+            <a class="btn btn-primary book-details-author-button" href="/customers/<%= rental.customer.id %>">View
+                Customer</a>
+        </div>
+        <div class="book-details-btn-grid">
+            <a class="btn btn-primary book-details-author-button" href="/copies/<%= rental.copy.id %>">View Copy</a>
+        </div>
+    </div>
+
+    <div class="book-details-grid">
+        <div class="book-details-label"> ID:</div>
+        <div>
+            <%= rental.id %>
+        </div>
+        <div class="book-details-label"> Borrower:</div>
+        <div>
+            <%= rental.customer.fullName %>
+        </div>
+        <div class="book-details-label"> Copy:</div>
+        <div>
+            <%= rental.copy.id %>
+        </div>
+        <div class="book-details-label"> Borrow Date:</div>
+        <div>
+            <%= rental.borrowDate.toDateString() %>
+        </div>
+        <div class="book-details-label"> Expected Return Date:</div>
+        <div>
+            <%= rental.expectedReturnDate.toDateString() %>
+        </div>
+        <div class="book-details-label"> Actual Return Date:</div>
+        <div>
+            <%= rental.actualReturnDate.toDateString() %>
+        </div>
+        <div class="book-details-label"> Rental Status:</div>
+        <div>
+            <%= rental.status %>
+        </div>
+    </div>
 </div>

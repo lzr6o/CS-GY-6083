@@ -1,4 +1,4 @@
-<h2>Search Reservation</h2>
+<h2 class="page-header">Search Reservation</h2>
 <form action="/reservations" method="GET">
     <div class="form-row">
         <div class="form-item">
@@ -19,21 +19,23 @@
     </div>
 
     <div class="form-row form-row-end btn-row">
-        <button class = "btn btn-primary"
-        type="submit">Search</button>
+        <button class="btn btn-primary" type="submit">Search</button>
     </div>
 </form>
 <br>
-<% reservations.forEach(reservation => { %>
-    <div>
-        <%= reservation.timeslot %>
-        <%= reservation.date.toDateString() %>
+<% reservations.forEach(reservation=> { %>
+    <div class="author-row">
+        <div class="author-name">
+            <%= reservation.timeslot %>
+        </div>
+        <div class="author-name">
+            <%= reservation.date.toDateString() %>
+        </div>
     </div>
     <div class="form-row form-row-end btn-row">
-        <a class="btn btn-primary" 
-        href="/reservations/<%= reservation.id %>">View</a>
-        <a class="btn btn-primary" 
-        href="/reservations/<%= reservation.id %>/edit">Edit</a>
+        <a class="btn btn-primary" href="/reservations/<%= reservation.id %>">View</a>
+        <a class="btn btn-primary" href="/reservations/<%= reservation.id %>/edit">Edit</a>
+
+        <%- include('../partials/deleteForm', { url: `/reservations/${reservation.id}` }) %>
     </div>
-    <%- include('../partials/deleteForm', { url: `/reservations/${reservation.id}` }) %>
-        <% }) %>
+    <% }) %>

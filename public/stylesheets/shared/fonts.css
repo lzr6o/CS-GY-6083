@@ -1,76 +1,4 @@
 @font-face {
-    font-family: 'Apple Garamond';
-    src: url('/fonts/AppleGaramond-Bold.woff2') format('woff2'),
-        url('/fonts/AppleGaramond-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Apple Garamond';
-    src: url('/fonts/AppleGaramond.woff2') format('woff2'),
-        url('/fonts/AppleGaramond.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Apple Garamond';
-    src: url('/fonts/AppleGaramond-BoldItalic.woff2') format('woff2'),
-        url('/fonts/AppleGaramond-BoldItalic.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Fragment Core';
-    src: url('/fonts/FragmentCoreRom.woff2') format('woff2'),
-        url('/fonts/FragmentCoreRom.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Apple Garamond';
-    src: url('/fonts/AppleGaramondLight.woff2') format('woff2'),
-        url('/fonts/AppleGaramondLight.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Apple Garamond';
-    src: url('/fonts/AppleGaramond-Italic.woff2') format('woff2'),
-        url('/fonts/AppleGaramond-Italic.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Spongeboy Me Bob';
-    src: url('/fonts/SpongeboyMeBob.woff2') format('woff2'),
-        url('/fonts/SpongeboyMeBob.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Apple Garamond';
-    src: url('/fonts/AppleGaramondLight-Italic.woff2') format('woff2'),
-        url('/fonts/AppleGaramondLight-Italic.woff') format('woff');
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
     font-family: 'Berkahi Blackletter';
     src: url('/fonts/BerkahiBlackletter.woff2') format('woff2'),
         url('/fonts/BerkahiBlackletter.woff') format('woff');
@@ -80,11 +8,55 @@
 }
 
 @font-face {
-    font-family: 'Aubrey';
-    src: url('/fonts/Aubrey.woff2') format('woff2'),
-        url('/fonts/Aubrey.woff') format('woff');
-    font-weight: normal;
+    font-family: 'PD-B-Italic';
+    src: url('/fonts/PlayfairDisplay-BlackItalic.woff2') format('woff2'),
+        url('/fonts/PlayfairDisplay-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PD-B';
+    src: url('/fonts/PlayfairDisplay-Black.woff2') format('woff2'),
+        url('/fonts/PlayfairDisplay-Black.woff') format('woff');
+    font-weight: 900;
     font-style: normal;
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'PD-EB';
+    src: url('/fonts/PlayfairDisplay-ExtraBold.woff2') format('woff2'),
+        url('/fonts/PlayfairDisplay-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PD-Italic';
+    src: url('/fonts/PlayfairDisplay-MediumItalic.woff2') format('woff2'),
+        url('/fonts/PlayfairDisplay-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PD-EB-Italic';
+    src: url('/fonts/PlayfairDisplay-ExtraBoldItalic.woff2') format('woff2'),
+        url('/fonts/PlayfairDisplay-ExtraBoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PD';
+    src: url('/fonts/PlayfairDisplay-Medium.woff2') format('woff2'),
+        url('/fonts/PlayfairDisplay-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}

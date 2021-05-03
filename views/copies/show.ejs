@@ -1,10 +1,19 @@
-<h1>Copy</h1>
-<div>
-    ID: <%= copy.id %>
+<h1 class="page-header">Copy</h1>
+
+<div class="book-details">
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-primary" href="/books/<%= copy.book.id %>">View Book</a>
+    </div>
+    <div class="book-details-grid">
+        <div class="book-details-label"> ID:</div>
+        <div>
+            <%= copy.id %>
+        </div>
+        <div class="book-details-label"> Status:</div>
+        <div>
+            <%= copy.status %>
+        </div>
+    </div>
 </div>
-<div>
-    Status: <%= copy.status %>
-</div>
-<div class="form-row form-row-end btn-row">
-    <a class="btn btn-primary" href="/books/<%= copy.book.id %>">View Book</a>
-</div>
+
+

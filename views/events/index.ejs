@@ -1,4 +1,4 @@
-<h2>Search Event</h2>
+<h2 class="page-header">Search Event</h2>
 <form action="/events" method="GET">
     <div class="form-row">
         <div class="form-item">
@@ -32,10 +32,4 @@
     </div>
 </form>
 <br>
-<div>
-    <% events.forEach(event => { %>
-        <a class="form-item" href="/events/<%= event.id %>">
-            <img height="100" width="150" src="<%= event.coverImagePath %>">
-        </a>
-        <% }) %>
-</div>
+<%- include('../partials/eventGrid', { events: events, large:true }) %>

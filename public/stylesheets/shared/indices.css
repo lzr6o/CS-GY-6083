@@ -1,5 +1,5 @@
 :root {
-    --index-font-family: 'AppleGaramond-Bold';
+    --index-font-family: 'PD';
 }
 
 .index-row {
@@ -17,7 +17,7 @@
     /*box code*/
     margin-left: 3rem;
     padding: 3rem;
-    width: 10rem;
+    width: 100%;
     border-top: 1px solid rgba(255, 255, 255,0.3); 
     border-bottom: 3px solid rgba(0, 0, 0, 0.1);
     border-left: 2px solid rgba(255, 255, 255,0.3);
@@ -34,7 +34,7 @@
     /*box code*/
     margin-right: 3rem;
     padding: 3rem;
-    width: 10rem;
+    width: 100%;
     border-top: 1px solid rgba(255, 255, 255,0.3); 
     border-bottom: 3px solid rgba(0, 0, 0, 0.1);
     border-left: 2px solid rgba(255, 255, 255,0.3);

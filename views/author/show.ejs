@@ -1,49 +1,71 @@
-<h2>
+<h2 class="page-header">
     <%= author.fullName %>
 </h2>
-<img width="150" height="150" src="<%= author.coverImagePath %>">
-<div>
-    Role: <%= author.role %>
+
+
+
+<div class="book-details">
+    <div>
+        <img class="book-cover" src="<%= author.coverImagePath %>">
+        <div class="book-details-btn-grid">
+            <a class="btn btn-primary book-details-author-button" href="/author/<%= author.id %>/edit">Edit</a>
+        </div>
+    </div>
+
+    <div class="book-details-grid">
+        <div class="book-details-label"> Role:</div>
+        <div>
+            <%= author.role %>
+        </div>
+        <div class="book-details-label"> ID:</div>
+        <div>
+            <%= author.id %>
+        </div>
+        <div class="book-details-label"> Username:</div>
+        <div>
+            <%= author.username %>
+        </div>
+        <div class="book-details-label"> Password:</div>
+        <div>
+            <%= author.password %>
+        </div>
+        <div class="book-details-label"> Gender:</div>
+        <div>
+            <%= author.gender %>
+        </div>
+        <div class="book-details-label"> Email:</div>
+        <div>
+            <%= author.email %>
+        </div>
+        <div class="book-details-label"> Phone:</div>
+        <div>
+            <%= author.phone %>
+        </div>
+        <div class="book-details-label"> Street:</div>
+        <div>
+            <%= author.street %>
+        </div>
+        <div class="book-details-label"> City:</div>
+        <div>
+            <%= author.city %>
+        </div>
+        <div class="book-details-label"> Zipcode:</div>
+        <div>
+            <%= author.zipcode %>
+        </div>
+        <div class="book-details-label"> State:</div>
+        <div>
+            <%= author.state %>
+        </div>
+        <div class="book-details-label"> Country:</div>
+        <div>
+            <%= author.country %>
+        </div>
+    </div>
 </div>
-<div>
-    ID: <%= author.id %>
-</div>
-<div>
-    Username: <%= author.username %>
-</div>
-<div>
-    Password: <%= author.password %>
-</div>
-<div>
-    Gender: <%= author.gender %>
-</div>
-<div>
-    Email: <%= author.email %>
-</div>
-<div>
-    Phone: <%= author.phone %>
-</div>
-<div>
-    Street: <%= author.street %>
-</div>
-<div>
-    City: <%= author.city %>
-</div>
-<div>
-    Zipcode: <%= author.zipcode %>
-</div>
-<div>
-    State: <%= author.state %>
-</div>
-<div>
-    Country: <%= author.country %>
-</div>
-<a href="/author/<%= author.id %>/edit">Edit</a>
+
+
 <% if (booksByAuthor.length> 0) { %>
-    <h2>Books By Author</h2>
-    <% booksByAuthor.forEach(book=> { %>
-        <a href="/books/<%= book.id %>">
-            <img height="150" width="100" src="<%=book.coverImagePath %>">
-        </a>
-        <% }) %>
-            <% } %>
+    <h2 class="page-header">Books By Author</h2>
+    <%- include('../partials/bookGrid', { books: booksByAuthor }) %>
+        <% } %>

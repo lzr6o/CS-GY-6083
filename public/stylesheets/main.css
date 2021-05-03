@@ -5,6 +5,7 @@
 @import 'shared/form.css';
 @import 'shared/author.css';
 @import 'shared/indices.css';
+@import 'shared/books.css';
 
 :root{
     font-family: 'Berkahi Blackletter';
@@ -17,15 +18,15 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     background: linear-gradient(
         to bottom, var(--color-background-dark), 
         var(--color-background-light));
 }
 
 .container {
-    max-width: 1200px;
-    margin: auto;
+    max-width: 1400px;
+    margin: 3rem; 
     margin-bottom: 3rem;
 }
 
@@ -34,7 +35,12 @@ body{
 }
 
 .page-header {
-    font-family: 'AppleGaramond-Bold';
-    font-size: 1.70rem;
+    font-family: 'Berkahi Blackletter';
+    font-size: 2rem;
     font-weight: 500;
+}
+
+.error-message {
+    font-family: 'PD-Italic';
+    color: hsl(0, 99%, 32%);
 }

@@ -1,7 +1,5 @@
-@import 'shared/fonts.css';
-
 :root{
-    --nav-title-font-size: 2rem;
+    --nav-title-font-size: 3rem;
     --nav-title-font-weight: bold;
     --nav-link-font-weight: 300;
     --nav-bar-select-color: hsl(50, 47%, 22%);
@@ -15,11 +13,6 @@
     text-decoration: none;
     font-size: var(--nav-title-font-size);
     font-weight: var(--nav-title-font-weight);
-}
-
-.header-link {
-    font-family: 'AppleGaramond-Bold';
-    font-size: 0.75rem;
 }
 
 .header-nav {
@@ -45,16 +38,16 @@
 
 .header-nav li a {
     /* make nav bar horizontal*/
-    float: left;  
+    float:left;  
     text-decoration: none;
     display: block;
     color: var(--color-text-light);
     font-weight: var(--nav-link-font-weight);
-    padding: 0.5rem;
-    border-top: 1px solid rgba(255, 255, 255,0.3); 
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    border-left: 1px solid rgba(255, 255, 255,0.3);
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border-left: 2px solid rgba(255, 255, 255,0.3);
+    border-right: 2px solid rgba(0, 0, 0, 0.1);
+    margin-top: 1.5rem;
 }
 
 /*when mouse reach turn white*/
@@ -64,6 +57,6 @@
 
 /*when mouse reach turn purple*/
 .header-nav li a:hover {
-    background-color: var(--color-hover);
+    color: var(--color-hover);
 }
   

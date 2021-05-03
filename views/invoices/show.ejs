@@ -1,18 +1,29 @@
-<h1>Invoice</h1>
-<div>
-    ID: <%= invoice.id %>
-</div>
-<div>
-    Date Generated: <%= invoice.dateGenerated.toDateString() %>
-</div>
-<div>
-    Amount: <%= invoice.amount %>
-</div>
+<h1 class="page-header">Invoice</h1>
 
-<div class="form-row form-row-end btn-row">
-    <a class="btn btn-primary" href="/rentals/<%= invoice.rental.id %>">View Rental</a>
-</div>
+<div class="book-details">
+    <div>
+        <div class="book-details-btn-grid">
+            <a class="btn btn-primary book-details-author-button" 
+            href="/rentals/<%= invoice.rental.id %>">View Rental</a>
+        </div>
+        <div class="book-details-btn-grid">
+            <a class="btn btn-primary book-details-author-button" 
+            href="/customers/<%= invoice.customer.id %>">View Customer</a>
+        </div>
+    </div>
 
-<div class="form-row form-row-end btn-row">
-    <a class="btn btn-primary" href="/customers/<%= invoice.customer.id %>">View Customer</a>
+    <div class="book-details-grid">
+        <div class="book-details-label"> ID:</div>
+        <div>
+            <%= invoice.id %>
+        </div>
+        <div class="book-details-label"> Date Generated:</div>
+        <div>
+            <%= invoice.dateGenerated.toDateString() %>
+        </div>
+        <div class="book-details-label"> Amount:</div>
+        <div>
+            <%= '$' + invoice.amount %>
+        </div>
+    </div>
 </div>

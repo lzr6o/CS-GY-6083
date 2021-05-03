@@ -1,4 +1,4 @@
-<h2>Search Authors</h2>
+<h2 class="page-header">Search Authors</h2>
 <form action="/authors" method="GET">
     <div class="form-row">
         <div class="form-item">
@@ -14,21 +14,22 @@
 </form>
 <br>
 <% authors.forEach(author => { %>
-    <div>
-        <%= author.fullName %>
-    </div>
-    <div class="form-row">
-        <a class="form-item" href="/authors/<%= author.id %>">
-            <img class="form-item" height="150" width="150" src="<%= author.coverImagePath %>">
-        </a>
-    </div>
+    <div class="author-row">
+        <div class="author-name">
+            <%= author.fullName %>
+        </div>
+        <div class="form-row">
+            <a class="form-item" href="/authors/<%= author.id %>">
+            </a>
+        </div>
 
-    <div class="form-row form-row-end btn-row">
-        <a class="btn btn-primary" 
-        href="/authors/<%= author.id %>">View</a>
-        <a class="btn btn-primary" 
-        href="/authors/<%= author.id %>/edit">Edit</a>
+        <div class="form-row form-row-end btn-row">
+            <a class="btn btn-primary" 
+            href="/authors/<%= author.id %>">View</a>
+            <a class="btn btn-primary" 
+            href="/authors/<%= author.id %>/edit">Edit</a>
+            <%- include('../partials/deleteForm', { url: `/authors/${author.id}` }) %>
+        </div>
     </div>
-        <%- include('../partials/deleteForm', { url: `/authors/${author.id}` }) %>
         <% }) %>
     

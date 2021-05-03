@@ -1,11 +1,19 @@
-<h1>Topic</h1>
-<h2>
+<h1 class="page-header">Topic
     <%= topic.type %>
-</h2>
-<div>
-    ID: <%= topic.id %>
+</h1>
+
+<div class="book-details">
+    <div>
+        <img class="book-cover" src="<%= topic.coverImagePath %>">
+    </div>
+    <div class="book-details-grid">
+        <div class="book-details-label"> ID:</div>
+        <div>
+            <%= topic.id %>
+        </div>
+        <div class="book-details-label"> Description:</div>
+        <div>
+            <%= topic.description %>
+        </div>
+    </div>
 </div>
-<div>
-    Description: <%= topic.description %>
-</div>
-<img width="150" height="150" src="<%= topic.coverImagePath %>">

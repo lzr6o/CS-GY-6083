@@ -1,11 +1,22 @@
-<h1>Room</h1>
-<h2>
-    <%= room.number %>
-</h2>
-<div>
-    ID: <%= room.id %>
+<h1 class="page-header">Room</h1>
+
+<div class="book-details">
+    <div>
+        <img class="book-cover" src="<%= room.coverImagePath %>">
+    </div>
+
+    <div class="book-details-grid">
+        <div class="book-details-label"> ID:</div>
+        <div>
+            <%= room.id %>
+        </div>
+        <div class="book-details-label"> Room Number:</div>
+        <div>
+            <%= room.number %>
+        </div>
+        <div class="book-details-label"> Capacity:</div>
+        <div>
+            <%= room.capacity %>
+        </div>
+    </div>
 </div>
-<div>
-    Capacity: <%= room.capacity %>
-</div>
-<img width="150" height="100" src="<%= room.coverImagePath %>">

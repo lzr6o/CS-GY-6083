@@ -1,4 +1,4 @@
-<h2>Search Rental</h2>
+<h2 class="page-header">Search Rental</h2>
 <form action="/rentals" method="GET">
     <div class="form-row">
         <div class="form-item">
@@ -17,22 +17,23 @@
         </div>
     </div>
     <div class="form-row form-row-end btn-row">
-        <button class = "btn btn-primary"
-        type="submit">Search</button>
+        <button class="btn btn-primary" type="submit">Search</button>
     </div>
 </form>
 <br>
-<% rentals.forEach(rental => { %>
-    <div>
-        <%= rental.id %>
-        <%= rental.borrowDate.toDateString() %>
-        <%= rental.status %>
+<% rentals.forEach(rental=> { %>
+    <div class="author-row">
+        <div class="author-name">
+            <%= rental.id %>
+        </div>
+        <div class="author-name">
+            <%= rental.status %>
+        </div>
     </div>
     <div class="form-row form-row-end btn-row">
-        <a class="btn btn-primary" 
-        href="/rentals/<%= rental.id %>">View</a>
-        <a class="btn btn-primary" 
-        href="/rentals/<%= rental.id %>/edit">Edit</a>
+        <a class="btn btn-primary" href="/rentals/<%= rental.id %>">View</a>
+        <a class="btn btn-primary" href="/rentals/<%= rental.id %>/edit">Edit</a>
+
+        <%- include('../partials/deleteForm', { url: `/rentals/${rental.id}` }) %>
     </div>
-    <%- include('../partials/deleteForm', { url: `/rentals/${rental.id}` }) %>
-        <% }) %>
+    <% }) %>

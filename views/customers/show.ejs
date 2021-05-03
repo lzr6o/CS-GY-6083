@@ -1,47 +1,72 @@
-<h1>Customer</h1>
-<h2>
+<h1 class="page-header">Customer
     <%= customer.fullName %>
-</h2>
-<img width="150" height="150" src="<%= customer.coverImagePath %>">
-<div>
-    Role: <%= customer.role %>
-</div>
-<div>
-    ID: <%= customer.id %>
-</div>
-<div>
-    Username: <%= customer.username %>
-</div>
-<div>
-    Password: <%= customer.password %>
-</div>
-<div>
-    Gender: <%= customer.gender %>
-</div>
-<div>
-    Email: <%= customer.email %>
-</div>
-<div>
-    Phone: <%= customer.phone %>
-</div>
-<div>
-    Street: <%= customer.street %>
-</div>
-<div>
-    City: <%= customer.city %>
-</div>
-<div>
-    Zipcode: <%= customer.zipcode %>
-</div>
-<div>
-    State: <%= customer.state %>
-</div>
-<div>
-    Country: <%= customer.country %>
-</div>
-<div>
-    Identification Type: <%= customer.identificationType %>
-</div>
-<div>
-    Identification Number: <%= customer.identificationNumber %>
+</h1>
+
+<div class="book-details">
+    <div>
+        <img class="book-cover" src="<%= customer.coverImagePath %>">
+        <div class="book-details-btn-grid">
+            <a class="btn btn-primary book-details-author-button" 
+            href="/customer/<%= customer.id %>/edit">Edit</a>
+        </div>
+    </div>
+
+    <div class="book-details-grid">
+        <div class="book-details-label"> Role:</div>
+        <div>
+            <%= customer.role %>
+        </div>
+        <div class="book-details-label"> ID:</div>
+        <div>
+            <%= customer.id %>
+        </div>
+        <div class="book-details-label"> Username:</div>
+        <div>
+            <%= customer.username %>
+        </div>
+        <div class="book-details-label"> Password:</div>
+        <div>
+            <%= customer.password %>
+        </div>
+        <div class="book-details-label"> Gender:</div>
+        <div>
+            <%= customer.gender %>
+        </div>
+        <div class="book-details-label"> Email:</div>
+        <div>
+            <%= customer.email %>
+        </div>
+        <div class="book-details-label"> Phone:</div>
+        <div>
+            <%= customer.phone %>
+        </div>
+        <div class="book-details-label"> Street:</div>
+        <div>
+            <%= customer.street %>
+        </div>
+        <div class="book-details-label"> City:</div>
+        <div>
+            <%= customer.city %>
+        </div>
+        <div class="book-details-label"> Zipcode:</div>
+        <div>
+            <%= customer.zipcode %>
+        </div>
+        <div class="book-details-label"> State:</div>
+        <div>
+            <%= customer.state %>
+        </div>
+        <div class="book-details-label"> Country:</div>
+        <div>
+            <%= customer.country %>
+        </div>
+        <div class="book-details-label"> Identification Type:</div>
+        <div>
+            <%= customer.identificationType %>
+        </div>
+        <div class="book-details-label"> Identification Number:</div>
+        <div>
+            <%= customer.identificationNumber %>
+        </div>
+    </div>
 </div>

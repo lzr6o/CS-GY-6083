@@ -1,4 +1,4 @@
-<h2>Search Fund</h2>
+<h2 class="page-header">Search Fund</h2>
 <form action="/funds" method="GET"></form>
     <div class="form-row">
         <div class="form-item">
@@ -18,8 +18,13 @@
 </form>
 <br>
 <% funds.forEach(fund => { %>
-    <div>
-        <%= fund.amount %>
+    <div class="author-row">
+        <div class="author-name">
+            <%= fund.id %>
+        </div>
+        <div class="author-name">
+            <%= fund.amount %>
+        </div>
     </div>
 
     <div class="form-row form-row-end btn-row">
@@ -27,6 +32,6 @@
         href="/funds/<%= fund.id %>">View</a>
         <a class="btn btn-primary" 
         href="/funds/<%= fund.id %>/edit">Edit</a>
-    </div>
     <%- include('../partials/deleteForm', { url: `/funds/${fund.id}` }) %>
-        <% }) %>
+    </div>
+    <% }) %>

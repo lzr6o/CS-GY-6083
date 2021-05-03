@@ -1,20 +1,34 @@
-<h1>Fund</h1>
-<div>
-    ID: <%= fund.id %>
-</div>
-<div>
-    Event: <%= fund.event.name %>
-</div>
-<div>
-    Sponsor: <%= fund.sponsor.name %>
-</div>
-<div>
-    Amount: <%= fund.amount %>
-</div>
+<h1 class="page-header">Fund</h1>
 
-<div class="form-row form-row-end btn-row">
-    <a class="btn btn-primary" 
-    href="/events/<%= fund.event.id %>">View Event</a>
-    <a class="btn btn-primary" 
-    href="/sponsors/<%= fund.sponsor.id %>">View Sponsor</a>
-</div>
+
+<div class="book-details">
+    <div>
+        <div class="book-details-btn-grid">
+            <a class="btn btn-primary book-details-author-button" 
+            href="/events/<%= fund.event.id %>">View Event</a>
+
+        </div>
+        <div class="book-details-btn-grid">
+            <a class="btn btn-primary book-details-author-button" 
+            href="/sponsors/<%= fund.sponsor.id %>">View Sponsor</a>
+        </div>
+    </div>
+
+    <div class="book-details-grid">
+        <div class="book-details-label"> ID:</div>
+        <div>
+            <%= fund.id %>
+        </div>
+        <div class="book-details-label"> Event:</div>
+        <div>
+            <%= fund.event.name %>
+        </div>
+        <div class="book-details-label"> Sponsor:</div>
+        <div>
+            <%= fund.sponsor.name %>
+        </div>
+        <div class="book-details-label"> Amount:</div>
+        <div>
+            <%= fund.amount %>
+        </div>
+   

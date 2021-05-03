@@ -1,8 +1,8 @@
-<h2>Search Sponsor</h2>
+<h2 class="page-header">Search Sponsor</h2>
 <form action="/sponsors" method="GET">
     <div class="form-row">
         <div class="form-item">
-        <label>Type</label>
+            <label>Type</label>
             <select name="type">
                 <option value=""></option>
                 <option value="Individual">Individual</option>
@@ -15,25 +15,21 @@
         </div>
     </div>
     <div class="form-row form-row-end btn-row">
-        <button class = "btn btn-primary"
-        type="submit">Search</button>
+        <button class="btn btn-primary" type="submit">Search</button>
     </div>
 </form>
 <br>
-<% sponsors.forEach(sponsor => { %>
-    <div>
-        <%= sponsor.name %>
+<% sponsors.forEach(sponsor=> { %>
+    <div class="author-row">
+        <div class="author-name">
+            <%= sponsor.name %>
+        </div>
     </div>
-    <div>
-        <a href="/sponsors/<%= sponsor.id %>">
-            <img height="150" width="150" src="<%= sponsor.coverImagePath %>">
-        </a>
-    </div>
+
     <div class="form-row form-row-end btn-row">
-        <a class="btn btn-primary" 
-        href="/sponsors/<%= sponsor.id %>">View</a>
-        <a class="btn btn-primary" 
-        href="/sponsors/<%= sponsor.id %>/edit">Edit</a>
+        <a class="btn btn-primary" href="/sponsors/<%= sponsor.id %>">View</a>
+        <a class="btn btn-primary" href="/sponsors/<%= sponsor.id %>/edit">Edit</a>
+
+        <%- include('../partials/deleteForm', { url: `/sponsors/${sponsor.id}` }) %>
     </div>
-    <%- include('../partials/deleteForm', { url: `/sponsors/${sponsor.id}` }) %>
-        <% }) %>
+    <% }) %>

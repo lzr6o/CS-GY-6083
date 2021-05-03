@@ -1,22 +1,35 @@
-<h1>Reservation</h1>
-<div>
-    ID: <%= reservation.id %>
-</div>
-<div>
-    Customer: <%= reservation.customer.fullName %>
-</div>
-<div>
-    Room: <%= reservation.room.number %>
-</div>
-<div>
-    Date: <%= reservation.date.toDateString() %>
-</div>
-<div>
-    Timeslot: <%= reservation.timeslot %>
-</div>
-<div class="form-row form-row-end btn-row">
-    <a class="btn btn-primary" 
-    href="/customers/<%= reservation.customer.id %>">View Customer</a>
-    <a class="btn btn-primary" 
-    href="/rooms/<%= reservation.room.id %>">View Room</a>
+<h1 class="page-header">Reservation</h1>
+
+<div class="book-details">
+    <div>
+        <div class="book-details-btn-grid">
+            <a class="btn btn-primary book-details-author-button" href="/customers/<%= reservation.customer.id %>">View
+                Customer</a>
+        </div>
+        <div class="book-details-btn-grid">
+            <a class="btn btn-primary book-details-author-button" href="/rooms/<%= reservation.room.id %>">View Room</a>
+        </div>
+    </div>
+    <div class="book-details-grid">
+        <div class="book-details-label"> ID:</div>
+        <div>
+            <%= reservation.id %>
+        </div>
+        <div class="book-details-label"> Customer:</div>
+        <div>
+            <%= reservation.customer.fullName %>
+        </div>
+        <div class="book-details-label"> Room:</div>
+        <div>
+            <%= reservation.room.number %>
+        </div>
+        <div class="book-details-label"> Date:</div>
+        <div>
+            <%= reservation.date.toDateString() %>
+        </div>
+        <div class="book-details-label"> Timeslot:</div>
+        <div>
+            <%= reservation.timeslot %>
+        </div>
+    </div>
 </div>

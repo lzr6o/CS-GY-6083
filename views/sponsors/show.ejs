@@ -1,11 +1,23 @@
-<h1>Sponsor</h1>
-<h2>
-    Name: <%= sponsor.name %>
-</h2>
-<img width="150" height="150" src="<%= sponsor.coverImagePath %>">
-<div>
-    ID: <%= sponsor.id %>
-</div>
-<div>
-    Type: <%= sponsor.type %>
+<h1 class="page-header">Sponsor</h1>
+
+
+<div class="book-details">
+    <div>
+        <img class="book-cover" src="<%= sponsor.coverImagePath %>">
+    </div>
+
+    <div class="book-details-grid">
+        <div class="book-details-label"> ID:</div>
+        <div>
+            <%= sponsor.id %>
+        </div>
+        <div class="book-details-label"> Sponsor Name:</div>
+        <div>
+            <%= sponsor.name %>
+        </div>
+        <div class="book-details-label"> Sponsor Type:</div>
+        <div>
+            <%= sponsor.type %>
+        </div>
+    </div>
 </div>

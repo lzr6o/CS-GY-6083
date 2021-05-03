@@ -1,4 +1,4 @@
-<h2>Registration List</h2>
+<h2 class="page-header">Registration List</h2>
 <form action="/registrations" method="GET">
     <div class="form-row">
         <div class="form-item">
@@ -7,20 +7,20 @@
         </div>
     </div>
     <div class="form-row form-row-end btn-row">
-        <button class = "btn btn-primary"
-        type="submit">Search</button>
+        <button class="btn btn-primary" type="submit">Search</button>
     </div>
 </form>
 <br>
-<% registrations.forEach(registration => { %>
-    <div>
-        <%= registration.id %>
+<% registrations.forEach(registration=> { %>
+    <div class="author-row">
+        <div class="author-name">
+            <%= registration.id %>
+        </div>
     </div>
     <div class="form-row form-row-end btn-row">
-        <a class="btn btn-primary" 
-        href="/registrations/<%= registration.id %>">View</a>
-        <a class="btn btn-primary" 
-        href="/registrations/<%= registration.id %>/edit">Edit</a>
+        <a class="btn btn-primary" href="/registrations/<%= registration.id %>">View</a>
+        <a class="btn btn-primary" href="/registrations/<%= registration.id %>/edit">Edit</a>
+
+        <%- include('../partials/deleteForm', { url: `/registrations/${registration.id}` }) %>
     </div>
-    <%- include('../partials/deleteForm', { url: `/registrations/${registration.id}` }) %>
-        <% }) %>
+    <% }) %>

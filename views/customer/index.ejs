@@ -1,9 +1,10 @@
-<h1>Dear Customer</h1>
-
-<h2>
+<h1 class="page-header">Welcome Customer
     <%= customer.fullName %>
-        <div><a href='/'>Logout</a></div>
-</h2>
+</h1>
+
+<div class="form-row form-row-end btn-row">
+    <a class="btn btn-primary" href='/'>Logout</a>
+</div>
 
 <div class='index-row'>
     <div class='index-item-left'>
@@ -58,8 +59,14 @@
 <% if (invoices.length> 0) { %>
     <h2>Invoice</h2>
     <% invoices.forEach(invoice=> { %>
-        <div>
-            ID: <%= invoice.id %> <a href="/invoices/<%= invoice.id %>">View</a>
+        <div class="author-row">
+            <div class="author-name">
+                ID: <%= invoice.id %>
+            </div>
+        </div> 
+        <div class="form-row form-row-end btn-row">
+            <a class="btn btn-primary" 
+            href="/invoices/<%= invoice.id %>">View</a>
         </div>
         <br>
         <% }) %>
@@ -68,8 +75,15 @@
                 <% if (payments.length> 0) { %>
                     <h2>Payment</h2>
                     <% payments.forEach(payment=> { %>
-                        <div>
-                            ID: <%= payment.id %> <a href="/payments/<%= payment.id %>">View</a>
+                        <div class="author-row">
+                            <div class="author-name">
+                                ID: <%= payment.id %>
+                            </div>
+                        </div>
+
+                        <div class="form-row form-row-end btn-row">
+                            <a class="btn btn-primary" 
+                            href="/payments/<%= payment.id %>">View</a>
                         </div>
                         <br>
                         <% }) %>
@@ -78,9 +92,13 @@
                                 <% if (rentals.length> 0) { %>
                                     <h2>Rental</h2>
                                     <% rentals.forEach(rental=> { %>
-                                        <div>
-                                            ID: <%= rental.id %>
-                                                <a href="/rentals/<%= rental.id %>">View</a>
+                                        <div class="author-row">
+                                            <div class="author-name">
+                                                ID: <%= rental.id %>
+                                            </div>
+                                        </div>
+                                        <div class="form-row form-row-end btn-row">
+                                            <a class="btn btn-primary" href="/rentals/<%= rental.id %>">View</a>
                                         </div>
                                         <br>
                                         <% }) %>
@@ -89,9 +107,14 @@
                                                 <% if (registrations.length> 0) { %>
                                                     <h2>Registration</h2>
                                                     <% registrations.forEach(registration=> { %>
-                                                        <div>
-                                                            ID: <%= registration.id %>
-                                                                <a href="/registrations/<%= registration.id %>">View</a>
+                                                        <div class="author-row">
+                                                            <div class="author-name">
+                                                                ID: <%= registration.id %>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row form-row-end btn-row">
+                                                            <a class="btn btn-primary" 
+                                                            href="/registrations/<%= registration.id %>">View</a>
                                                         </div>
                                                         <br>
                                                         <% }) %>
@@ -100,9 +123,14 @@
                                                                 <% if (reservations.length> 0) { %>
                                                                     <h2>Reservation</h2>
                                                                     <% reservations.forEach(reservation=> { %>
-                                                                        <div>
-                                                                            ID: <%= reservation.id %> <a
-                                                                                    href="/reservations/<%= reservation.id %>">View</a>
+                                                                        <div class="author-row">
+                                                                            <div class="author-name">
+                                                                                ID: <%= reservation.id %>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-row form-row-end btn-row">
+                                                                            <a class="btn btn-primary"
+                                                                            href="/reservations/<%= reservation.id %>">View</a>
                                                                         </div>
                                                                         <br>
                                                                         <% }) %>

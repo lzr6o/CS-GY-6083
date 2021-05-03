@@ -1,16 +1,28 @@
-<h1>Registration</h1>
-<div>
-    ID: <%= registration.id %>
-</div>
-<div>
-    Customer: <%= registration.customer.fullName %>
-</div>
-<div>
-    Event: <%= registration.event.name %>
-</div>
-<div class="form-row form-row-end btn-row">
-    <a class="btn btn-primary" 
-    href="/customers/<%= registration.customer.id %>">View Customer</a>
-    <a class="btn btn-primary" 
-    href="/events/<%= registration.event.id %>">View Event</a>
+<h1 class="page-header">Registration</h1>
+
+<div class="book-details">
+    <div>
+        <div class="book-details-btn-grid">
+            <a class="btn btn-primary book-details-author-button" href="/customers/<%= registration.customer.id %>">View
+                Customer</a>
+        </div>
+        <div class="book-details-btn-grid">
+            <a class="btn btn-primary book-details-author-button" href="/events/<%= registration.event.id %>">View
+                Event</a>
+        </div>
+    </div>
+    <div class="book-details-grid">
+        <div class="book-details-label"> ID:</div>
+        <div>
+            <%= registration.id %>
+        </div>
+        <div class="book-details-label"> Customer:</div>
+        <div>
+            <%= registration.customer.fullName %>
+        </div>
+        <div class="book-details-label"> Event:</div>
+        <div>
+            <%= registration.event.name %>
+        </div>
+    </div>
 </div>

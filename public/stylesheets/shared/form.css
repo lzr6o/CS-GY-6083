@@ -1,7 +1,8 @@
 :root {
-    --form-lable-font-family:'Audrey';
+    --form-lable-font-family:'PD';
     --form-lable-font-size: 1rem;
-    --form-input-background-color: hsl(var(--color-base-hue), 100%, 31%);
+    --form-lable-font-weight: 'bold';
+    --form-input-background-color: hsl(var(--color-base-hue), 72%, 83%);
     --form-input-border-color: hsl(var(--color-base-hue), 100%, 50%);
     --form-input-border-color-light: hsl(var(--color-base-hue), 100%, 80%);
 }
@@ -34,6 +35,7 @@
 .form-item > label {
     font-family: var(--form-lable-font-family);
     font-size: var(--form-lable-font-size);
+    font-weight: var(--form-lable-font-weight);
     margin-bottom: .25rem;
     margin-left: .25rem;
 }

@@ -1,30 +1,49 @@
-<h1>Payment</h1>
-<div>
-    ID: <%= payment.id %>
-</div>
-<div>
-    Customer: <%= payment.customer.fullName %>
-</div>
-<div>
-    Invoice: <%= payment.invoice.id %>
-</div>
-<div>
-    Pay Date: <%= payment.payDate.toDateString() %>
-</div>
-<div>
-    Amount: <%= payment.amount %>
-</div>
-<div>
-    Method: <%= payment.method %>
-</div>
-<div>
-    Card Holder Name: <%= payment.cardHolderName %>
-</div>
-<div>
-    Card Number: <%= payment.cardNumber %>
-</div>
+<h1 class="page-header">Payment</h1>
 
-<div class="form-row form-row-end btn-row">
-    <a class="btn btn-primary" href="/customers/<%= payment.customer.id %>">View Customer</a>
-    <a class="btn btn-primary" href="/invoices/<%= payment.invoice.id %>">View Invoice</a>
+<div class="book-details">
+    <div>
+        <div class="book-details-btn-grid">
+            <a class="btn btn-primary book-details-author-button" href="/customers/<%= payment.customer.id %>">View
+                Customer</a>
+        </div>
+        <div class="book-details-btn-grid">
+            <a class="btn btn-primary book-details-author-button" href="/invoices/<%= payment.invoice.id %>">View
+                Invoice</a>
+        </div>
+    </div>
+
+    <div class="book-details-grid">
+        <div class="book-details-label"> ID:</div>
+        <div>
+            <%= payment.id %>
+        </div>
+        <div class="book-details-label"> Customer:</div>
+        <div>
+            <%= payment.customer.fullName %>
+        </div>
+        <div class="book-details-label"> Invoice:</div>
+        <div>
+            <%= payment.invoice.id %>
+        </div>
+        <div class="book-details-label"> Pay Date:</div>
+        <div>
+            <%= payment.payDate.toDateString() %>
+        </div>
+        <div class="book-details-label"> Amount:</div>
+        <div>
+            <%= payment.amount %>
+        </div>
+        <div class="book-details-label"> Payment Method:</div>
+        <div>
+            <%= payment.method %>
+        </div>
+        <div class="book-details-label"> Card Holder Name:</div>
+        <div>
+            <%= payment.cardHolderName %>
+        </div>
+        <div class="book-details-label"> Card Number:</div>
+        <div>
+            <%= payment.cardNumber %>
+        </div>
+    </div>
 </div>

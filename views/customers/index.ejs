@@ -1,4 +1,4 @@
-<h2>Search Customers</h2>
+<h2 class="page-header">Search Customers</h2>
 <form action="/customers" method="GET">
     <div class="form-row">
         <div class="form-item">
@@ -14,13 +14,15 @@
 </form>
 <br>
 <% customers.forEach(customer => { %>
-    <div>
-        <%= customer.fullName %>
+    <div class="author-row">
+        <div class="author-name">
+            <%= customer.fullName %>
+        </div>
     </div>
+    
     <div class="form-row">
-        <a class="form-item" href="/customers/<%= customer.id %>">
-            <img height="150" width="150" src="<%= customer.coverImagePath %>">
-        </a>
+        <a class="form-item" 
+        href="/customers/<%= customer.id %>"></a>
     </div>
 
     <div class="form-row form-row-end btn-row">
@@ -28,7 +30,7 @@
         href="/customers/<%= customer.id %>">View</a>
         <a class="btn btn-primary" 
         href="/customers/<%= customer.id %>/edit">Edit</a>
-    </div>
         <%- include('../partials/deleteForm', { url: `/customers/${customer.id}` }) %>
+    </div>
         <% }) %>
     

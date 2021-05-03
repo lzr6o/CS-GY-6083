@@ -1,4 +1,4 @@
-<h2>Search Invoice</h2>
+<h2 class="page-header">Search Invoice</h2>
 <form action="/invoices" method="GET">
     <div class="form-row">
         <div class="form-item">
@@ -29,9 +29,13 @@
 </form>
 <br>
 <% invoices.forEach(invoice => { %>
-    <div>
-        <%= invoice.amount %>
-        <%= invoice.dateGenerated.toDateString() %>
+    <div class="author-row">
+        <div class="author-name">
+            <%= invoice.dateGenerated.toDateString() %>
+        </div>
+        <div class="author-name">
+            <%= '$'+invoice.amount %>
+        </div>
     </div>
     
     <div class="form-row form-row-end btn-row">
@@ -40,7 +44,7 @@
     
         <a class="btn btn-primary"
         href="/invoices/<%= invoice.id %>/edit">Edit</a>
-    </div>
         <%- include('../partials/deleteForm', { url: `/invoices/${invoice.id}` }) %>
-        <% }) %>
+    </div>    
+    <% }) %>
     

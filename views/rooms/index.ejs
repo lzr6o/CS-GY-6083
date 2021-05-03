@@ -1,4 +1,4 @@
-<h2>Search Room</h2>
+<h2 class="page-header">Search Room</h2>
 <form action="/rooms" method="GET">
     <div class="form-row">
         <div class="form-item">
@@ -7,15 +7,24 @@
         </div>
     </div>
     <div class="form-row form-row-end btn-row">
-        <button class = "btn btn-primary"
-        type="submit">Search</button>
+        <button class="btn btn-primary" type="submit">Search</button>
     </div>
 </form>
 <br>
 <div>
-    <% rooms.forEach(room => { %>
-        <a href="/rooms/<%= room.id %>">
-            <img height="100" width="150" src="<%= room.coverImagePath %>">
-        </a>
+    <% rooms.forEach(room=> { %>
+        <div class="author-row">
+            <div class="author-name">
+                <%= room.number %>
+            </div>
+
+            <div class="author-name">
+                <%= 'Capacity:' + room.capacity %>
+            </div>
+        </div>
+
+        <div class="form-row form-row-end btn-row">
+            <a class="btn btn-primary" href="/rooms/<%= room.id %>">View</a>
+        </div>
         <% }) %>
 </div>

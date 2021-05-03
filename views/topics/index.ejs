@@ -1,4 +1,4 @@
-<h2>Search Topic</h2>
+<h2 class="page-header">Search Topic</h2>
 <form action="/topics" method="GET">
     <div class="form-row">
         <div class="form-item">
@@ -12,10 +12,4 @@
     </div>
 </form>
 <br>
-<div>
-    <% topics.forEach(topic => { %>
-        <a href="/topics/<%= topic.id %>">
-            <img height="150" width="150" src="<%= topic.coverImagePath %>">
-        </a>
-        <% }) %>
-</div>
+<%- include('../partials/topicGrid', { topics: topics, large:true }) %>
